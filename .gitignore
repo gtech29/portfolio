@@ -1,7 +1,12 @@
 # Ignore everything
 *
+frontend/node_modules
+venv
+
 
 # But not these files/folders
 !.gitignore
 !agents/
 !agents/**
+!frontend/
+!frontend/**
