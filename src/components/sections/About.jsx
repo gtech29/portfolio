@@ -35,7 +35,6 @@ SectionCard.propTypes = {
   ).isRequired,
 };
 
-
 export const About = () => {
   const programmingLanguages = ["Python", "Java", "HTML", "CSS", "SQL"];
   const programmingTools = [
@@ -59,7 +58,7 @@ export const About = () => {
     {
       company: "NAVFAC EXWC",
       title: "Research & Development Intern",
-      years: "Dec 2024 – Present",
+      years: "Dec 2024 \u2013 Present",
       description: [
         "Developed and configured containerized applications to enhance deployment efficiency.",
         "Configured secure network setups for control systems, ensuring robust connectivity.",
@@ -69,7 +68,7 @@ export const About = () => {
     {
       company: "StelEsthetics",
       title: "Website Developer",
-      years: "Feb 2022 – Present",
+      years: "Feb 2022 \u2013 Present",
       description: [
         "Built a responsive website with Webflow, optimizing UX for mobile and desktop.",
         "Showcased services like facials, lash lifts, and peels to increase client engagement.",
@@ -79,9 +78,9 @@ export const About = () => {
     {
       company: "Accenture, LLC",
       title: "Business Analyst Intern",
-      years: "Jun 2023 – Aug 2023",
+      years: "Jun 2023 \u2013 Aug 2023",
       description: [
-        "Tested Cisco’s purchasing portal using SQL to simulate transactions.",
+        "Tested Cisco's purchasing portal using SQL to simulate transactions.",
         "Debugged login issues to restore developer access, improving QA workflow.",
         "Led strategic meetings to align Accenture and Cisco development efforts.",
       ],
@@ -89,7 +88,7 @@ export const About = () => {
     {
       company: "US Navy",
       title: "Hospital Corpsman",
-      years: "Aug 2008 – Aug 2011",
+      years: "Aug 2008 \u2013 Aug 2011",
       description: [
         "Applied critical thinking and technical skills in high-pressure environments.",
       ],
@@ -100,7 +99,7 @@ export const About = () => {
     {
       company: "CSUN",
       title: "Association for Computing Machinery (ACM)",
-      years: "Jul 2024 – Present",
+      years: "Jul 2024 \u2013 Present",
       description: [
         "Built and maintained chapter website using HTML, CSS, JS, and Bootstrap.",
         "Increased engagement by 15% via UX improvements and analytics tracking.",
@@ -121,7 +120,7 @@ export const About = () => {
     {
       company: "Rio Hondo College",
       title: "A.S. in Computer Info. Systems & Mathematics",
-      years: "Jun 2021 – May 2023",
+      years: "Jun 2021 \u2013 May 2023",
       description: [
         "Relevant Courses: Ethical Hacking, System Design.",
         "GPA: 3.5 / 4.0",
@@ -158,11 +157,11 @@ export const About = () => {
 
           <div className="rounded-xl border-white/10 border hover:-translate-y-1 transition-all mb-6">
             <p className="text-gray-300 mb-6 text-center">
-              I&#39;m a rising senior at CSUN majoring in Computer Science with a
-              passion for systems, security, and DevSecOps. I enjoy building
+              I&#39;m a rising senior at CSUN majoring in Computer Science with
+              a passion for systems, security, and DevSecOps. I enjoy building
               scalable solutions through containerized development and
-              automation. I&#39;m currently expanding my experience with tools like
-              Docker and Kubernetes in both academic and industry settings.
+              automation. I&#39;m currently expanding my experience with tools
+              like Docker and Kubernetes in both academic and industry settings.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
