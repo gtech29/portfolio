@@ -52,7 +52,7 @@ export default function Hero(): React.ReactElement {
             <h2 className="text-lg text-gray-600 dark:text-gray-300">
               Software Engineer @ NAVFAC
               <br />
-              B.S. Computer Science, CSUN '26
+              B.S. Computer Science, CSUN &#39;26
             </h2>
             <div className="flex gap-4 text-gray-600 dark:text-gray-400">
               {SOCIALS.map(({ href, label, icon: Icon }) => (
@@ -88,7 +88,7 @@ export default function Hero(): React.ReactElement {
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                I've contributed to research at NAVFAC EXWC, supported
+                I&#39;ve contributed to research at NAVFAC EXWC, supported
                 nonprofits through web platforms, and deployed production-grade
                 websites with Google Analytics and SEO optimization.
               </p>
