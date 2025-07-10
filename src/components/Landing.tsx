@@ -88,9 +88,11 @@ export default function Hero(): React.ReactElement {
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                I&#39;ve contributed to research at NAVFAC EXWC, supported
-                nonprofits through web platforms, and deployed production-grade
-                websites with Google Analytics and SEO optimization.
+                I&#39;ve contributed to research at the Naval Facilities
+                Engineering and Expeditionary Warfare Center (NAVFAC EXWC),
+                supported nonprofits through web development, and launched
+                production-grade websites with integrated Google Analytics and
+                SEO optimization.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
