@@ -14,25 +14,30 @@ export default function StelEstheticsPage() {
     >
       <h3 className="text-2xl font-bold">StelEsthetics</h3>
       <p className="text-gray-700 dark:text-gray-300 max-w-3xl">
-        StelEsthetics is a responsive website developed for a skincare
-        esthetician. Built with Webflow, the site emphasizes clarity, ease of
-        navigation, and mobile-first design principles. The goal was to improve
-        client engagement and support appointment scheduling through thoughtful
-        design and analytics-driven insights.
+        StelEsthetics is a responsive website designed for an independent
+        skincare esthetician to showcase services, promote products, and attract
+        new clients. Built with Webflow, the site emphasizes clarity,
+        mobile-first design, and user-friendly navigation to deliver a seamless
+        experience across all devices. The primary goals were to improve client
+        engagement, build trust through updated content, and streamline the
+        appointment booking process using insights from analytics.
       </p>
 
       <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
         <li>
-          Designed and launched a fully responsive Webflow site, prioritizing
-          user-friendly navigation and a mobile-first layout.
+          Developed and deployed a fully responsive website using Webflow, with
+          an intuitive layout that adapts fluidly to mobile, tablet, and desktop
+          screens.
         </li>
         <li>
-          Integrated Google Analytics to monitor bounce rates, track user
-          behavior, and identify high-conversion flows for booking appointments.
+          Integrated Google Analytics to measure engagement, track user
+          behavior, and identify the highest-performing paths to appointment
+          scheduling.
         </li>
         <li>
-          Regularly published service updates, testimonials, and announcements
-          to keep clients informed and build trust.
+          Maintained site relevance by regularly updating services, sharing
+          client testimonials, and posting announcements to encourage repeat
+          visits and trust.
         </li>
       </ul>
 

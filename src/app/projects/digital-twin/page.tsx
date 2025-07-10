@@ -7,11 +7,13 @@ export default function DigitalTwin() {
       <div>
         <h1 className="text-3xl font-bold mb-2">Digital Twin</h1>
         <p className="text-gray-700 dark:text-gray-300">
-          This project virtualizes industrial control systems using Docker and
-          Kubernetes. I built a full stack simulation of sensors, PLCs, and
-          networked devices to test automation workflows in air-gapped
-          environments. It&#39;s designed for research, reliability testing, and
-          future AI integration.
+          This project virtualizes industrial control systems using a
+          Docker-based microservices architecture deployed in a local Kubernetes
+          cluster. I built a full-stack simulation with containers representing
+          controllers, PLCs, and DNP3 outstations, all communicating through an
+          MQTT broker. Designed for air-gapped environments, the system enables
+          secure testing of automation workflows and supports real-time
+          monitoring, research, and future AI integration.
         </p>
       </div>
 
@@ -19,15 +21,25 @@ export default function DigitalTwin() {
         <h2 className="text-xl font-semibold mb-2">Key Features</h2>
         <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
           <li>
-            Containerized PLC, sensor, and MQTT broker using Docker Compose and
-            Kubernetes
+            Simulated PLC, DNP3 outstation, sensor, and MQTT broker using Docker
+            containers.
           </li>
-          <li>Real-time dashboard UI built with React, Flask, and Chart.js</li>
-          <li>Air-gapped deployment inside a secured Ubuntu VM</li>
           <li>
-            Historical logging and anomaly detection with Isolation Forest
+            Deployed all services into a local Kubernetes cluster with no
+            external dependencies.
           </li>
-          <li>Local LLM agent integration for querying system status</li>
+          <li>
+            Enabled real-time monitoring through a React, Flask, and Chart.js
+            dashboard.
+          </li>
+          <li>
+            Verified cross-VM communication with industry tools like Tracer TU
+            and JENEsys.
+          </li>
+          <li>
+            Packaged for portable deployment via USB or VM image for offline
+            operation.
+          </li>
         </ul>
       </div>
 
@@ -35,9 +47,9 @@ export default function DigitalTwin() {
         <h2 className="text-xl font-semibold mb-2">Architecture Diagram</h2>
         <div className="bg-gray-100 p-4 rounded shadow">
           <Image
-            src="/images/placeholder-architecture.png"
+            src="/digitaltwin-architecture.png"
             alt="Digital Twin Architecture Diagram"
-            width={800}
+            width={600}
             height={450}
             className="rounded"
           />
@@ -46,26 +58,25 @@ export default function DigitalTwin() {
 
       <div>
         <h2 className="text-xl font-semibold mb-2">Dashboard Screenshots</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
           <Image
-            src="/images/placeholder-dashboard1.png"
+            src="/dashboard1.png"
             alt="Dashboard Screenshot 1"
-            width={400}
+            width={600}
             height={250}
             className="rounded"
           />
-          <Image
+          {/* <Image
             src="/images/placeholder-dashboard2.png"
             alt="Dashboard Screenshot 2"
             width={400}
             height={250}
             className="rounded"
-          />
+          /> */}
         </div>
       </div>
 
       <div className="flex flex-wrap gap-4">
-        
         <Link
           href="/assets/digital-twin-overview.pdf"
           className="inline-block px-5 py-2 text-sm font-medium border border-gray-400 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"

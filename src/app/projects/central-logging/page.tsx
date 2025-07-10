@@ -10,31 +10,34 @@ export default function CentralLoggingSystemPage() {
       <div className="space-y-4">
         <h1 className="text-3xl font-bold">Central Logging System for CCDC</h1>
         <p className="text-gray-700 dark:text-gray-300">
-          This project was developed to support the CSUN CCDC team&#39;s incident
-          response and forensic analysis workflows. It collects and parses logs
-          across systems to support structured analysis in real-time and
-          post-event.
+          The CSUN Collegiate Cyber Defense Competition (CCDC) team simulates
+          real-world incident response scenarios, where students defend complex
+          infrastructure against advanced cyber threats. I developed a
+          centralized logging system to support their forensic and operational
+          workflows, providing a streamlined way to collect, store, and analyze
+          logs during and after security incidents.
         </p>
         <ul className="list-disc list-inside text-gray-800 dark:text-gray-200 space-y-2">
           <li>
-            Built with Docker Compose to orchestrate syslog-ng, PostgreSQL, and
-            a custom Flask API.
+            Built a containerized logging infrastructure using Docker Compose to
+            manage <code>syslog-ng</code>, PostgreSQL, and a custom Flask API.
           </li>
           <li>
-            Accepts remote logs using the <code>logger</code> command or syslog
-            forwarders over TCP/UDP.
+            Configured remote log collection via the <code>logger</code> command
+            and syslog protocols (TCP/UDP) for easy integration across multiple
+            hosts.
           </li>
           <li>
-            Stores log data in a relational format with searchable fields like
-            timestamp, IP, and event type.
+            Designed a PostgreSQL schema for structured log storage, enabling
+            fast queries by timestamp, IP, user, and event type.
           </li>
           <li>
-            Designed CLI tools to filter, sort, and export logs efficiently
-            during competitions.
+            Developed CLI tools to filter and export logs in real time, aiding
+            incident response during competitions.
           </li>
           <li>
-            Includes future plans for optional AI-driven threat pattern matching
-            and alert generation.
+            Outlined plans for future integration of AI-driven anomaly
+            detection, alerting, and behavioral pattern analysis.
           </li>
         </ul>
       </div>
