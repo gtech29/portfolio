@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/firebaseAdmin";
 
-// Optional: validate captcha server-side
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    // Optional: Validate reCAPTCHA token
+    // Validate reCAPTCHA token
     if (!body.captcha) {
       return NextResponse.json(
         { error: "reCAPTCHA token missing" },
@@ -18,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     if (RECAPTCHA_SECRET_KEY) {
       const verifyRes = await fetch(
-        `https://www.google.com/recaptcha/api/siteverify`,
+        "https://www.google.com/recaptcha/api/siteverify",
         {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
