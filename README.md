@@ -1,50 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Juan Rodriguez – Personal Portfolio Website
+
+This is the source code for [juan-rodriguez.dev](https://www.juan-rodriguez.dev), a personal portfolio site built to showcase my work in full-stack development, AI infrastructure, DevSecOps, and research-driven projects. The site highlights professional experience, selected projects, and services I offer in web development, digital systems, and emerging technologies.
+
+## Features
+
+- **Modern Stack:** Built with React, TypeScript, Next.js, and Tailwind CSS
+- **Interactive Agents:** Real-time chat agents for each page powered by LLM backends
+- **Projects Section:** Detailed write-ups of featured work including:
+  - [Digital Twin System](https://www.juan-rodriguez.dev/projects/digital-twin)
+  - [Central Logging System](https://www.juan-rodriguez.dev/projects/logging-system)
+  - [StelEsthetics](https://www.juan-rodriguez.dev/projects/stelesthetics)
+- **Responsive UI:** Mobile-first design with dark mode support and smooth UI transitions
+- **Secure Contact Form:** Firebase-integrated form with reCAPTCHA for protected submissions
+- **SEO and Accessibility:** Includes meta tags, Open Graph data, and ARIA best practices
+
+## Folder Structure
+
+src/
+├── app/ # Next.js App Router pages
+│ ├── layout.tsx
+│ └── page.tsx
+├── components/ # Reusable UI components (Hero, Footer, AboutSidebar, etc.)
+├── styles/ # Global Tailwind CSS styles
+├── assets/ # Images, logos, and static content
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repo:**
 
 ```bash
+git clone https://github.com/juan-cyber/juan-portfolio.git
+cd juan-portfolio
+
+Install dependencies:
+npm install
+
+Run the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Open http://localhost:3000 in your browser.
+
+Deployment
+The site is deployed via Vercel with a custom domain: juan-rodriguez.dev
+
+Tech Stack
+Frontend: React, Next.js 14 (App Router), Tailwind CSS, TypeScript
+
+Backend (Contact Form): Firebase Firestore + reCAPTCHA
+
+Hosting: Vercel + GitHub
+
+LLM Agent Backend (planned): FastAPI + OpenAI / Local LLMs (Mistral GGUF via llama.cpp)
+
+DevOps: Docker, GitHub Actions (WIP)
+
+Future Improvements
+Integrate local LLM agent using llama.cpp for offline demos
+
+Add project blog and research highlights
+
+Enhance dashboard UI with real-time charts and analytics
+
+License
+MIT © Juan Rodriguez – Built to support learning, hiring, and collaboration.
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Firebase configuration
-
-The application uses Firebase Admin from server-side API routes. The private
-key required by Firebase can be provided in two different ways:
-
-1. **Raw PEM string** – paste the key directly into the `FIREBASE_PRIVATE_KEY`
-   environment variable (including line breaks). When using the Vercel
-   dashboard, press `Shift + Enter` to insert real line breaks.
-2. **Base64 encoded string** – store a base64 representation of the key in the
-   variable. The application will automatically decode the value during
-   initialization.
-
-Other required variables are `FIREBASE_PROJECT_ID` and `FIREBASE_CLIENT_EMAIL`.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
