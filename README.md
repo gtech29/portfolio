@@ -1,11 +1,11 @@
-# Juan Rodriguez – Personal Portfolio Website
+# Personal Portfolio Website
 
 This is the source code for [juan-rodriguez.dev](https://www.juan-rodriguez.dev), a personal portfolio site built to showcase my work in full-stack development, AI infrastructure, DevSecOps, and research-driven projects. The site highlights professional experience, selected projects, and services I offer in web development, digital systems, and emerging technologies.
 
 ## Features
 
 - **Modern Stack:** Built with React, TypeScript, Next.js, and Tailwind CSS
-- **Interactive Agents:** Real-time chat agents for each page powered by LLM backends
+- **Interactive Agents:** Real-time chat agents for each page powered by LLM backends (In Progress)
 - **Projects Section:** Detailed write-ups of featured work including:
   - [Digital Twin System](https://www.juan-rodriguez.dev/projects/digital-twin)
   - [Central Logging System](https://www.juan-rodriguez.dev/projects/logging-system)
@@ -16,50 +16,40 @@ This is the source code for [juan-rodriguez.dev](https://www.juan-rodriguez.dev)
 
 ## Folder Structure
 
-src/
-├── app/ # Next.js App Router pages
-│ ├── layout.tsx
-│ └── page.tsx
-├── components/ # Reusable UI components (Hero, Footer, AboutSidebar, etc.)
-├── styles/ # Global Tailwind CSS styles
-├── assets/ # Images, logos, and static content
+├── src/
+│   ├── app/                      # Next.js App Router pages
+│   │   ├── layout.tsx           # Shared layout
+│   │   └── page.tsx             # Root page
+│   ├── components/              # Reusable UI components
+│   │   ├── Hero.tsx
+│   │   ├── Footer.tsx
+│   │   ├── AboutSidebar.tsx
+│   │   └── ...                  # Other shared components
+│   ├── styles/                  # Global Tailwind CSS styles
+│   │   └── globals.css
+│   └── assets/                  # Static assets like images and logos
 
-## Getting Started
+### Deployment
 
-1. **Clone the repo:**
+The site is deployed using [Vercel](https://vercel.com) with a custom domain: [juan-rodriguez.dev](https://juan-rodriguez.dev).
 
-```bash
-git clone https://github.com/juan-cyber/juan-portfolio.git
-cd juan-portfolio
+---
 
-Install dependencies:
-npm install
+### Tech Stack
 
-Run the development server:
-npm run dev
-Open http://localhost:3000 in your browser.
+- **Frontend:** React, Next.js 14 (App Router), Tailwind CSS, TypeScript
+- **Backend (Contact Form):** Firebase Firestore + Google reCAPTCHA
+- **Hosting:** Vercel + GitHub
 
-Deployment
-The site is deployed via Vercel with a custom domain: juan-rodriguez.dev
+---
 
-Tech Stack
-Frontend: React, Next.js 14 (App Router), Tailwind CSS, TypeScript
+---
 
-Backend (Contact Form): Firebase Firestore + reCAPTCHA
+### Planned Enhancements
 
-Hosting: Vercel + GitHub
+- Add support for local LLM agents.
+- Containerize the app, integrate it with Kubernetes, and enhance security.
 
-LLM Agent Backend (planned): FastAPI + OpenAI / Local LLMs (Mistral GGUF via llama.cpp)
+### License
 
-DevOps: Docker, GitHub Actions (WIP)
-
-Future Improvements
-Integrate local LLM agent using llama.cpp for offline demos
-
-Add project blog and research highlights
-
-Enhance dashboard UI with real-time charts and analytics
-
-License
-MIT © Juan Rodriguez – Built to support learning, hiring, and collaboration.
-```
+MIT © Juan Rodriguez — created to support learning, hiring, and collaboration.
