@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').ExperimentalConfig} */
+const nextConfig = {
+  experimental: {
+    turbopack: {
+      exclude: ["firebase-admin"],
+    },
+  },
 };
 
 export default nextConfig;

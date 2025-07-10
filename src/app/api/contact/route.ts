@@ -34,6 +34,13 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    if (!db) {
+      return NextResponse.json(
+        { error: "Database not initialized" },
+        { status: 500 }
+      );
+    }
+
     // Save to Firestore
     const submissionRef = db.collection("contact_submissions").doc();
     await submissionRef.set({
