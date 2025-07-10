@@ -20,6 +20,20 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Firebase configuration
+
+The application uses Firebase Admin from server-side API routes. The private
+key required by Firebase can be provided in two different ways:
+
+1. **Raw PEM string** – paste the key directly into the `FIREBASE_PRIVATE_KEY`
+   environment variable (including line breaks). When using the Vercel
+   dashboard, press `Shift + Enter` to insert real line breaks.
+2. **Base64 encoded string** – store a base64 representation of the key in the
+   variable. The application will automatically decode the value during
+   initialization.
+
+Other required variables are `FIREBASE_PROJECT_ID` and `FIREBASE_CLIENT_EMAIL`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
