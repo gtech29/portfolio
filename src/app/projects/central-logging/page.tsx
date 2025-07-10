@@ -1,7 +1,7 @@
 // src/app/projects/central-logging-system/page.tsx
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 export default function CentralLoggingSystemPage() {
