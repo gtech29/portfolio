@@ -10,7 +10,7 @@ export default function DigitalTwin() {
           This project virtualizes industrial control systems using Docker and
           Kubernetes. I built a full stack simulation of sensors, PLCs, and
           networked devices to test automation workflows in air-gapped
-          environments. It’s designed for research, reliability testing, and
+          environments. It&#39;s designed for research, reliability testing, and
           future AI integration.
         </p>
       </div>

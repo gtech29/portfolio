@@ -1,17 +1,14 @@
-import admin from "firebase-admin";
-import { initializeApp, cert } from "firebase-admin/app";
+import { initializeApp, cert, getApps } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { getAuth } from "firebase-admin/auth";
-import fs from "fs";
 
-// Only initialize once
-if (!admin.apps.length) {
-  const serviceAccount = JSON.parse(
-    fs.readFileSync(process.env.GOOGLE_APPLICATION_CREDENTIALS!, "utf8")
-  );
-
+if (!getApps().length) {
   initializeApp({
-    credential: cert(serviceAccount),
+    credential: cert({
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+    }),
   });
 }
 

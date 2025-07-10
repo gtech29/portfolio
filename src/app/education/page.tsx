@@ -14,7 +14,7 @@ const education: EducationEntry[] = [
   {
     school: "California State University, Northridge",
     degree: "Bachelor of Science in Computer Science",
-    date: "Jan 2024 – May 2026",
+    date: "Jan 2024 - May 2026",
     bullets: [
       "Pursuing a B.S. in Computer Science with a focus on systems engineering, automation, and cloud-native development.",
       "Experience in operating systems, computer architecture, and software engineering for scalable and secure systems.",
@@ -25,7 +25,7 @@ const education: EducationEntry[] = [
   {
     school: "Rio Hondo Community College",
     degree: "Associate of Science in CIS & Mathematics",
-    date: "Jun 2021 – May 2023",
+    date: "Jun 2021 - May 2023",
     bullets: [
       "Built a foundation in software development, system analysis, and cybersecurity.",
       "Created object-oriented apps in C++ using encapsulation, inheritance, and polymorphism.",

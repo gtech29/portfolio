@@ -10,7 +10,7 @@ export default function CentralLoggingSystemPage() {
       <div className="space-y-4">
         <h1 className="text-3xl font-bold">Central Logging System for CCDC</h1>
         <p className="text-gray-700 dark:text-gray-300">
-          This project was developed to support the CSUN CCDC team’s incident
+          This project was developed to support the CSUN CCDC team&#39;s incident
           response and forensic analysis workflows. It collects and parses logs
           across systems to support structured analysis in real-time and
           post-event.
