@@ -16,6 +16,8 @@ This is the source code for [juan-rodriguez.dev](https://www.juan-rodriguez.dev)
 
 ### Project Structure
 
+![ProjectStructure] (/public/ProjectStructure.svg)
+
 ### Deployment
 
 The site is deployed using [Vercel](https://vercel.com) with a custom domain: [juan-rodriguez.dev](https://juan-rodriguez.dev).
