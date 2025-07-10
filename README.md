@@ -14,6 +14,8 @@ This is the source code for [juan-rodriguez.dev](https://www.juan-rodriguez.dev)
 - **Secure Contact Form:** Firebase-integrated form with reCAPTCHA for protected submissions
 - **SEO and Accessibility:** Includes meta tags, Open Graph data, and ARIA best practices
 
+### Project Structure
+
 ### Deployment
 
 The site is deployed using [Vercel](https://vercel.com) with a custom domain: [juan-rodriguez.dev](https://juan-rodriguez.dev).
