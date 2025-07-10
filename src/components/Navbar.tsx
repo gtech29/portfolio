@@ -92,7 +92,7 @@ export default function Navbar() {
 
                 {projectsOpen && (
                   <div className="pl-4 pb-2 flex flex-col gap-1">
-                    {link.subLinks.map((sub) => (
+                    {link.subLinks?.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
