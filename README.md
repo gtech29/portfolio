@@ -16,18 +16,7 @@ This is the source code for [juan-rodriguez.dev](https://www.juan-rodriguez.dev)
 
 ## Folder Structure
 
-├── src/
-│   ├── app/                      # Next.js App Router pages
-│   │   ├── layout.tsx           # Shared layout
-│   │   └── page.tsx             # Root page
-│   ├── components/              # Reusable UI components
-│   │   ├── Hero.tsx
-│   │   ├── Footer.tsx
-│   │   ├── AboutSidebar.tsx
-│   │   └── ...                  # Other shared components
-│   ├── styles/                  # Global Tailwind CSS styles
-│   │   └── globals.css
-│   └── assets/                  # Static assets like images and logos
+![Project Structure Diagram](/ProjectStructure.svg)
 
 ### Deployment
 
