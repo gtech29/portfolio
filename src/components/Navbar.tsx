@@ -17,7 +17,7 @@ const links = [
     ],
   },
   { href: "/education", label: "Education" },
-  { href: "/contact", label: "Contact Information" },
+  { href: "/contact", label: "Contact Me" },
 ];
 
 function NavLink({
