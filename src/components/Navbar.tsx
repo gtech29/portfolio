@@ -60,7 +60,11 @@ export default function Navbar() {
       <div className="md:hidden flex items-center justify-between bg-gray-100 dark:bg-gray-950 text-black dark:text-white p-4 shadow fixed top-0 left-0 w-full z-50">
         <div className="font-bold text-lg">Menu</div>
         <button onClick={toggleMenu}>
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? (
+            <X className="h-6 w-6 dark:text-white" />
+          ) : (
+            <Menu className="h-6 w-6 dark:text-white" />
+          )}
         </button>
       </div>
 
@@ -70,7 +74,7 @@ export default function Navbar() {
           isOpen ? "block" : "hidden md:block"
         }`}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col dark:text-white">
           {links.map((link) =>
             "subLinks" in link ? (
               <div key={link.label} className="w-full">
