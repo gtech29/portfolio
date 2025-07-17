@@ -41,7 +41,7 @@ export default function Education() {
   return (
     <motion.section
       id="education"
-      className="space-y-12 px-6 py-12 bg-white text-black dark:from-gray-950 dark:to-gray-900 dark:text-white min-h-screen"
+      className="space-y-12 px-6 py-12 bg-white dark:bg-gray-950 text-black dark:text-white min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

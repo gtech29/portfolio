@@ -57,7 +57,7 @@ export default function Navbar() {
   return (
     <>
       {/* Mobile header */}
-      <div className="md:hidden flex items-center justify-between bg-gray-100 p-4 shadow fixed top-0 left-0 w-full z-50">
+      <div className="md:hidden flex items-center justify-between bg-gray-100 dark:bg-gray-950 text-black dark:text-white p-4 shadow fixed top-0 left-0 w-full z-50">
         <div className="font-bold text-lg">Menu</div>
         <button onClick={toggleMenu}>
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -66,7 +66,7 @@ export default function Navbar() {
 
       {/* Sidebar Nav */}
       <nav
-        className={`bg-gray-100 shadow-inner md:h-screen md:w-[250px] fixed md:static top-[60px] w-full md:block z-40 transition-all duration-300 ease-in-out ${
+        className={`bg-gray-100 dark:bg-gray-950 text-black dark:text-white shadow-inner md:h-screen md:w-[250px] fixed md:static top-[60px] w-full md:block z-40 transition-all duration-300 ease-in-out ${
           isOpen ? "block" : "hidden md:block"
         }`}
       >
