@@ -13,6 +13,9 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "Juan Rodriguez | Portfolio",
   description: "A portfolio to showcase my professional experience",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -33,3 +36,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+// C:\Users\juanr\Desktop\Projects\portfolio\src\app\favicon.ico
