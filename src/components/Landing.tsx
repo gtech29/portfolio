@@ -1,6 +1,6 @@
 // src/components/Hero.tsx
 import React from "react";
-import { Mail, Github, Linkedin, Globe } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,8 +24,7 @@ const SOCIALS: SocialLink[] = [
     href: "https://www.linkedin.com/in/juan-rodriguez-26b39427a/",
     label: "LinkedIn",
     icon: Linkedin,
-  },
-  { href: "https://www.juan-rodriguez.dev/", label: "Portfolio", icon: Globe },
+  }
 ];
 
 const TAGS: Tag[] = [
@@ -81,24 +80,32 @@ export default function Hero(): React.ReactElement {
 
             <div className="space-y-4 pt-4 text-gray-800 dark:text-gray-200">
               <p className="text-gray-700 dark:text-gray-300">
-                I am a U.S. Navy veteran and a current Computer Science student
-                at California State University, Northridge. My work spans full
-                stack development, Kubernetes orchestration, and simulation of
-                embedded systems.
+                I&#39;m a U.S. Navy veteran and Computer Science student at
+                California State University, Northridge, with hands-on
+                experience in software engineering, cybersecurity, and
+                DevSecOps. My work bridges full-stack development with secure
+                infrastructure, containerization, and cloud-based automation.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                I&#39;ve contributed to research at the Naval Facilities
-                Engineering and Expeditionary Warfare Center (NAVFAC EXWC),
-                supported nonprofits through web development, and launched
-                production-grade websites with integrated Google Analytics and
-                SEO optimization.
+                Through internships and academic projects, I&#39;ve built and
+                deployed real-world systems that integrate Docker, Kubernetes,
+                CI/CD pipelines, and secure network communication. I&#39;ve
+                contributed to Department of Defense research by developing
+                digital twin environments and automated logging solutions for
+                industrial control systems. I&#39;ve also supported nonprofits
+                through custom web development and optimized SEO and analytics
+                integration.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                This portfolio reflects my journey from Hospital Corpsman to
-                software engineer. It showcases projects that combine hands-on
-                experience with thoughtful, scalable design.
+                Whether it&#39;s automating deployments, hardening Linux
+                systems, or simulating edge devices in air-gapped environments,
+                I focus on practical, scalable solutions that align with
+                real-world security and performance needs. My goal is to bring a
+                mission-driven mindset to DevSecOps, software development, or
+                cybersecurity engineering roles where I can continue learning
+                and contributing to secure, reliable systems.
               </p>
             </div>
           </div>
@@ -121,47 +128,57 @@ export default function Hero(): React.ReactElement {
         <h2 className="text-3xl font-semibold mb-6">About the Site</h2>
 
         <p className="mb-4">
-          This site documents my transition into software development and
-          showcases a selection of personal and professional projects. It’s
-          designed as a clean, accessible space for continuous learning and
-          growth.
+          This site reflects my transition into software engineering and
+          highlights key projects developed through hands-on experience in
+          cybersecurity, DevSecOps, and client-focused development. It&#39;s
+          designed as a clean, accessible space to document my learning journey,
+          showcase applied skills, and support my continued growth in the tech
+          industry.
         </p>
 
-        <ul className="space-y-3 list-disc list-inside">
-          <li>
-            <Link href="/work-experience" className="text-blue-700 underline">
-              Professional Experience
-            </Link>{" "}
-            — Highlights from research, development, and military service.
-          </li>
-          <li>
-            <Link
-              href="/projects/digital-twin"
-              className="text-blue-700 underline"
-            >
-              Projects
-            </Link>{" "}
-            — Selected work in cybersecurity, DevSecOps, and client-focused
-            development.
-          </li>
-          <li>
-            <Link href="/education" className="text-blue-700 underline">
-              Education
-            </Link>{" "}
-            — Academic background and learning path.
-          </li>
-          <li>
-            <a
-              href="https://gtech29.github.io/resume/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700 underline"
-            >
-              Resume
-            </a>{" "}
-            — Interactive resume with skills and experience summary.
-          </li>
-        </ul>
+        <div className="w-full max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8">
+          <ul className="space-y-4 list-disc list-inside text-gray-700 dark:text-gray-300 break-words">
+            <li>
+              <Link href="/work-experience" className="text-blue-700 underline">
+                Professional Experience
+              </Link>{" "}
+              — Highlights from research and development projects, with hands-on
+              work in automation, security-focused software development, and
+              DevSecOps practices.
+            </li>
+            <li>
+              <Link
+                href="/projects/digital-twin"
+                className="text-blue-700 underline"
+              >
+                Projects
+              </Link>{" "}
+              — Selected work focused on cybersecurity, DevSecOps, system
+              simulation, and cloud-native deployments using tools like Docker,
+              CI/CD pipelines, and version control.
+            </li>
+            <li>
+              <Link href="/education" className="text-blue-700 underline">
+                Education
+              </Link>{" "}
+              — Overview of my academic background, including coursework in
+              software engineering, system architecture, and secure programming.
+            </li>
+            <li>
+              <a
+                href="https://gtech29.github.io/resume/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Resume
+              </a>{" "}
+              — An interactive summary of my technical skills, certifications,
+              and experience tailored to software development and
+              security-driven roles.
+            </li>
+          </ul>
+        </div>
 
         <h3 className="text-2xl font-semibold mt-10 mb-4">Built With</h3>
         <p className="mb-2">
