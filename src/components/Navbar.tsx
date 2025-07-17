@@ -33,7 +33,8 @@ function NavLink({
 }) {
   const baseClass = "p-4 block";
   const activeClass = "bg-[#8badec] text-black";
-  const inactiveClass = "text-black hover:bg-gray-700 hover:text-white";
+  const inactiveClass =
+    "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white";
 
   return (
     <Link
@@ -68,13 +69,13 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Sidebar Nav */}
+      {/* Sidebar Navigation */}
       <nav
         className={`bg-gray-100 dark:bg-gray-950 text-black dark:text-white shadow-inner md:h-screen md:w-[250px] fixed md:static top-[60px] w-full md:block z-40 transition-all duration-300 ease-in-out ${
           isOpen ? "block" : "hidden md:block"
         }`}
       >
-        <div className="flex flex-col dark:text-white">
+        <div className="flex flex-col">
           {links.map((link) =>
             "subLinks" in link ? (
               <div key={link.label} className="w-full">
@@ -83,7 +84,7 @@ export default function Navbar() {
                   className={`p-4 w-full text-left flex items-center justify-between font-medium ${
                     pathname?.startsWith("/projects")
                       ? "bg-[#8badec] text-black"
-                      : "text-black hover:bg-gray-700 hover:text-white"
+                      : "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
                   }`}
                 >
                   <span>{link.label}</span>
@@ -103,7 +104,7 @@ export default function Navbar() {
                         className={`block px-4 py-2 text-sm rounded ${
                           pathname === sub.href
                             ? "bg-[#8badec] text-black"
-                            : "text-black hover:bg-gray-700 hover:text-white"
+                            : "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
                         }`}
                         onClick={closeMenu}
                       >
