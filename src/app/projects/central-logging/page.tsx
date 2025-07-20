@@ -13,40 +13,49 @@ export default function CentralLoggingSystemPage() {
       <div className="max-w-4xl mx-auto space-y-10">
         <div className="space-y-4">
           <h3 className="text-2xl sm:text-3xl font-bold">
-            Central Logging System for CCDC
+            Centralized Logging System
           </h3>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Overview
+          </h4>
           <p className="text-gray-700 dark:text-gray-300">
-            The CSUN Collegiate Cyber Defense Competition (CCDC) team simulates
-            real-world incident response scenarios, where students defend
-            complex infrastructure against advanced cyber threats. I developed a
-            centralized logging system to support their forensic and operational
-            workflows, providing a streamlined way to collect, store, and
-            analyze logs during and after security incidents.
+            A centralized logging system was deployed on a hardened virtualized
+            Linux environment to collect and store system activity across
+            connected hosts. The setup supports forensic visibility and incident
+            response in competitive cybersecurity settings. Log data is
+            structured for reliable storage and querying, with future plans for
+            integration into DevOps pipelines, automation routines, or
+            monitoring dashboards.
           </p>
         </div>
 
         <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
           <h2 className="text-xl font-semibold">Key Features</h2>
           <li>
-            Built a containerized logging infrastructure using Docker Compose to
-            manage <code>syslog-ng</code>, PostgreSQL, and a custom Flask API.
+            Configured a modular logging pipeline to receive external system
+            messages for centralized monitoring and historical analysis.
           </li>
           <li>
-            Configured remote log collection via the <code>logger</code> command
-            and syslog protocols (TCP/UDP) for easy integration across multiple
-            hosts.
+            Implemented structured data handling using a relational database
+            schema to support efficient log inspection and timeline
+            reconstruction.
           </li>
           <li>
-            Designed a PostgreSQL schema for structured log storage, enabling
-            fast queries by timestamp, IP, user, and event type.
+            Applied network access restrictions and service-level controls to
+            align with standard hardening practices and reduce exposure.
           </li>
           <li>
-            Developed CLI tools to filter and export logs in real time, aiding
-            incident response during competitions.
+            Conducted message delivery validation using system-native and
+            low-level UDP testing tools to ensure compatibility across
+            endpoints.
           </li>
           <li>
-            Outlined plans for future integration of AI-driven anomaly
-            detection, alerting, and behavioral pattern analysis.
+            Resolved parsing and ingestion issues related to data formatting and
+            missing fields to improve reliability of automated inserts.
+          </li>
+          <li>
+            Maintained clear documentation to support future UI integration and
+            enable streamlined visualization or alerting workflows.
           </li>
         </ul>
 
