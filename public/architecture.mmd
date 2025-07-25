@@ -1,0 +1,97 @@
+flowchart TB
+
+%% UI Pages
+subgraph UIPages["UI Pages"]
+    Home["Home"]
+    Contact["Contact"]
+    Services["Services"]
+    Products["Products Overview"]
+    FullProduct["Full Products"]
+    SignIn["Sign-In"]
+    SignUp["Sign-Up"]
+end
+
+%% UI Components
+subgraph UIComponents["UI Components"]
+    Header["Header"]
+    Hero["Hero"]
+    Reviews["Reviews"]
+    ServicesOverview["Services Overview"]
+end
+
+%% Client Side
+subgraph ClientSide["Client Side (Browser)"]
+    Home
+    Contact
+    Services
+    Products
+    FullProduct
+    SignIn
+    SignUp
+    Header
+    Hero
+    Reviews
+    ServicesOverview
+end
+
+%% Server Side
+subgraph ServerSide["Server Side (Next.js Runtime)"]
+    Config["Next.js Config"]
+    AppRouter["App Router"]
+    NextAuthAPI["NextAuth API"]
+    AuthLib["Auth Helpers"]
+    StaticServe["Static Files"]
+end
+
+%% External Services
+subgraph External["External Services"]
+    DB["Database"]
+    OAuth["OAuth Providers"]
+    StaticAssets["Static Assets"]
+end
+
+%% Connections
+Browser["Browser"] -->|Request Page| AppRouter
+AppRouter -->|Serve Page| Home
+AppRouter --> Contact
+AppRouter --> Services
+AppRouter --> Products
+AppRouter --> FullProduct
+AppRouter --> SignIn
+AppRouter --> SignUp
+
+Home --> Header
+Home --> Hero
+Home --> Reviews
+Services --> ServicesOverview
+
+SignIn -->|Submit| NextAuthAPI
+SignUp -->|Submit| NextAuthAPI
+NextAuthAPI -->|Use Helpers| AuthLib
+NextAuthAPI -->|DB Access| DB
+NextAuthAPI -->|OAuth| OAuth
+
+AppRouter -->|Static Files| StaticServe -->|From| StaticAssets
+Config -->|Configure| AppRouter
+
+%% Styles
+classDef ui fill:#ADD8E6,stroke:#333,stroke-width:1px
+classDef server fill:#90EE90,stroke:#333,stroke-width:1px
+classDef api fill:#32CD32,stroke:#333,stroke-width:1px
+classDef logic fill:#DDA0DD,stroke:#333,stroke-width:1px
+classDef db fill:#FFA500,stroke:#333,stroke-width:1px
+classDef static fill:#D3D3D3,stroke:#333,stroke-width:1px
+classDef external fill:#FFFFFF,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+classDef config fill:#E0E0E0,stroke:#333,stroke-width:1px
+
+%% Class assignment
+class Home,Contact,Services,Products,FullProduct,SignIn,SignUp ui
+class Header,Hero,Reviews,ServicesOverview ui
+class AppRouter server
+class Config config
+class NextAuthAPI api
+class AuthLib logic
+class StaticServe,StaticAssets static
+class DB db
+class OAuth external
+class Browser external

@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -46,13 +46,23 @@ export default function StelEstheticsPage() {
         </ul>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold">Architecture Overview</p>
-            <div className="w-full aspect-[4/3] bg-gray-200 dark:bg-gray-800 rounded flex items-center justify-center text-gray-500 text-sm">
-              [Architecture diagram coming soon.]
+          {/* Diagram: spans both columns on desktop */}
+          <div className="md:col-span-2 space-y-2">
+            <h1 className="text-sm font-semibold">Architecture Overview</h1>
+            <div className="w-full rounded-2xl overflow-x-auto">
+              <Image
+                src="/stelesthetics-architecture.png"
+                alt="stelesthetics-architecture"
+                width={0}
+                height={0}
+                className="w-full h-full"
+                unoptimized
+                priority
+              />
             </div>
           </div>
 
+          {/* Screenshot: takes one column */}
           <div className="space-y-2">
             <p className="text-sm font-semibold">Website Screenshot</p>
             <div className="w-full aspect-[16/9] bg-gray-200 dark:bg-gray-800 rounded flex items-center justify-center text-gray-500 text-sm">
