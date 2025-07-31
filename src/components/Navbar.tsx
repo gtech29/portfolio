@@ -5,7 +5,28 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 
-const links = [
+// Type definitions
+type InternalLink = {
+  href: string;
+  label: string;
+  subLinks?: never;
+  target?: undefined;
+  rel?: undefined;
+};
+type ExternalLink = {
+  href: string;
+  label: string;
+  target: string;
+  rel: string;
+  subLinks?: never;
+};
+type ProjectLinkGroup = {
+  label: string;
+  subLinks: { href: string; label: string }[];
+};
+type LinkType = InternalLink | ExternalLink | ProjectLinkGroup;
+
+const links: LinkType[] = [
   { href: "/", label: "Home" },
   { href: "/work-experience", label: "Professional Experience" },
   {
@@ -61,8 +82,8 @@ function ExternalNavLink({
 }: {
   href: string;
   label: string;
-  target: string;
-  rel: string;
+  target?: string;
+  rel?: string;
 }) {
   return (
     <a
@@ -89,7 +110,7 @@ export default function Navbar() {
       {/* Mobile header */}
       <div className="md:hidden flex items-center justify-between bg-gray-100 dark:bg-gray-950 text-black dark:text-white p-4 shadow fixed top-0 left-0 w-full z-50">
         <div className="font-bold text-lg">Menu</div>
-        <button onClick={toggleMenu}>
+        <button onClick={toggleMenu} aria-label="Toggle menu">
           {isOpen ? (
             <X className="h-6 w-6 dark:text-white" />
           ) : (
@@ -116,6 +137,8 @@ export default function Navbar() {
                         ? "bg-[#8badec] text-black"
                         : "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
                     }`}
+                    aria-expanded={projectsOpen}
+                    aria-controls="project-submenu"
                   >
                     <span>{link.label}</span>
                     {projectsOpen ? (
@@ -126,7 +149,10 @@ export default function Navbar() {
                   </button>
 
                   {projectsOpen && (
-                    <div className="pl-4 pb-2 flex flex-col gap-1">
+                    <div
+                      id="project-submenu"
+                      className="pl-4 pb-2 flex flex-col gap-1"
+                    >
                       {link.subLinks?.map((sub) => (
                         <Link
                           key={sub.href}
