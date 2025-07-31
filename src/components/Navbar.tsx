@@ -18,9 +18,15 @@ const links = [
   },
   { href: "/education", label: "Education" },
   { href: "/contact", label: "Contact Me" },
+  {
+    href: "https://gtech29.github.io/resume/",
+    label: "Resume",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
 ];
 
-function NavLink({
+function InternalNavLink({
   href,
   label,
   isActive,
@@ -44,6 +50,29 @@ function NavLink({
     >
       {label}
     </Link>
+  );
+}
+
+function ExternalNavLink({
+  href,
+  label,
+  target,
+  rel,
+}: {
+  href: string;
+  label: string;
+  target: string;
+  rel: string;
+}) {
+  return (
+    <a
+      href={href}
+      target={target}
+      rel={rel}
+      className="p-4 block text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+    >
+      {label}
+    </a>
   );
 }
 
@@ -76,54 +105,68 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col">
-          {links.map((link) =>
-            "subLinks" in link ? (
-              <div key={link.label} className="w-full">
-                <button
-                  onClick={() => setProjectsOpen(!projectsOpen)}
-                  className={`p-4 w-full text-left flex items-center justify-between font-medium ${
-                    pathname?.startsWith("/projects")
-                      ? "bg-[#8badec] text-black"
-                      : "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                >
-                  <span>{link.label}</span>
-                  {projectsOpen ? (
-                    <ChevronUp className="h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4" />
-                  )}
-                </button>
+          {links.map((link) => {
+            if ("subLinks" in link) {
+              return (
+                <div key={link.label} className="w-full">
+                  <button
+                    onClick={() => setProjectsOpen(!projectsOpen)}
+                    className={`p-4 w-full text-left flex items-center justify-between font-medium ${
+                      pathname?.startsWith("/projects")
+                        ? "bg-[#8badec] text-black"
+                        : "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    {projectsOpen ? (
+                      <ChevronUp className="h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4" />
+                    )}
+                  </button>
 
-                {projectsOpen && (
-                  <div className="pl-4 pb-2 flex flex-col gap-1">
-                    {link.subLinks?.map((sub) => (
-                      <Link
-                        key={sub.href}
-                        href={sub.href}
-                        className={`block px-4 py-2 text-sm rounded ${
-                          pathname === sub.href
-                            ? "bg-[#8badec] text-black"
-                            : "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                        }`}
-                        onClick={closeMenu}
-                      >
-                        {sub.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <NavLink
-                key={link.href}
-                href={link.href}
-                label={link.label}
-                isActive={pathname === link.href}
-                onClick={closeMenu}
-              />
-            )
-          )}
+                  {projectsOpen && (
+                    <div className="pl-4 pb-2 flex flex-col gap-1">
+                      {link.subLinks?.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          className={`block px-4 py-2 text-sm rounded ${
+                            pathname === sub.href
+                              ? "bg-[#8badec] text-black"
+                              : "text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                          }`}
+                          onClick={closeMenu}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            } else if ("target" in link) {
+              return (
+                <ExternalNavLink
+                  key={link.href}
+                  href={link.href}
+                  label={link.label}
+                  target={link.target}
+                  rel={link.rel}
+                />
+              );
+            } else {
+              return (
+                <InternalNavLink
+                  key={link.href}
+                  href={link.href}
+                  label={link.label}
+                  isActive={pathname === link.href}
+                  onClick={closeMenu}
+                />
+              );
+            }
+          })}
         </div>
       </nav>
     </>
