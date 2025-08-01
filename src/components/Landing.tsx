@@ -93,13 +93,13 @@ export default function Hero(): React.ReactElement {
               <p className="text-gray-700 dark:text-gray-300">
                 My experience spans Docker, Kubernetes, CI/CD pipelines, and
                 secure Linux infrastructure. At NAVFAC, I&#39;ve contributed to DoD
-                research—developing digital twin systems and automating threat
+                research; developing digital twin systems and automating threat
                 detection for industrial networks.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
                 I apply a mission-driven mindset to solve real-world problems in
-                DevSecOps, software engineering, and automation. I thrive in
+                software engineering. I thrive in
                 environments that demand critical thinking, hands-on
                 implementation, and continuous learning.
               </p>
@@ -126,7 +126,7 @@ export default function Hero(): React.ReactElement {
         <p className="mb-4">
           This site reflects my transition into software engineering and
           highlights key projects developed through hands-on experience in
-          cybersecurity, DevSecOps, and client-focused development. It&#39;s
+           software engineering, cybersecurity, and client-focused development. It&#39;s
           designed as a clean, accessible space to document my learning journey,
           showcase applied skills, and support my continued growth in the tech
           industry.
@@ -149,7 +149,7 @@ export default function Hero(): React.ReactElement {
               >
                 Projects
               </Link>{" "}
-              — Selected work focused on cybersecurity, DevSecOps, system
+              — Selected work focused on cybersecurity, system
               simulation, and cloud-native deployments using tools like Docker,
               CI/CD pipelines, and version control.
             </li>
