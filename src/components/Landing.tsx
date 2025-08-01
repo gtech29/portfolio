@@ -93,7 +93,7 @@ export default function Hero(): React.ReactElement {
               <p className="text-gray-700 dark:text-gray-300">
                 My experience spans Docker, Kubernetes, CI/CD pipelines, and
                 secure Linux infrastructure. At NAVFAC, I&#39;ve contributed to DoD
-                research; developing digital twin systems and automating threat
+                research by developing digital twin systems and automating threat
                 detection for industrial networks.
               </p>
 
