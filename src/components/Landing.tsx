@@ -1,4 +1,6 @@
 // src/components/Hero.tsx
+"use client";
+
 import React from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
@@ -24,10 +26,11 @@ const SOCIALS: SocialLink[] = [
     href: "https://www.linkedin.com/in/juan-rodriguez-26b39427a/",
     label: "LinkedIn",
     icon: Linkedin,
-  }
+  },
 ];
 
 const TAGS: Tag[] = [
+  { label: "Software Engineering", bg: "bg-gray-100", text: "text-[#1f2937]" },
   {
     label: "Full-Stack Development",
     bg: "bg-gray-100",
@@ -59,10 +62,11 @@ export default function Hero(): React.ReactElement {
                   key={label}
                   href={href}
                   aria-label={label}
+                  title={label}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="w-5 h-5 hover:text-black transition-colors" />
+                  <Icon className="w-5 h-5 hover:text-blue-600 transition-colors duration-200" />
                 </a>
               ))}
             </div>
@@ -71,7 +75,7 @@ export default function Hero(): React.ReactElement {
               {TAGS.map((tag) => (
                 <span
                   key={tag.label}
-                  className={`text-xs md:text-sm font-medium px-3 py-1 rounded-full border border-[#d1d5db] ${tag.bg} ${tag.text}`}
+                  className={`text-xs md:text-sm font-medium px-3 py-1 rounded-full border border-[#d1d5db] ${tag.bg} ${tag.text} hover:scale-105 transition-transform duration-200`}
                 >
                   {tag.label}
                 </span>
@@ -80,32 +84,24 @@ export default function Hero(): React.ReactElement {
 
             <div className="space-y-4 pt-4 text-gray-800 dark:text-gray-200">
               <p className="text-gray-700 dark:text-gray-300">
-                I&#39;m a U.S. Navy veteran and Computer Science student at
-                California State University, Northridge, with hands-on
-                experience in software engineering, cybersecurity, and
-                DevSecOps. My work bridges full-stack development with secure
-                infrastructure, containerization, and cloud-based automation.
+                I&#39;m a U.S. Navy veteran and CSUN Computer Science student
+                specializing in full-stack development, software engineering, cybersecurity, and
+                DevSecOps. I build systems that prioritize scalability,
+                reliability, and security.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                Through internships and academic projects, I&#39;ve built and
-                deployed real-world systems that integrate Docker, Kubernetes,
-                CI/CD pipelines, and secure network communication. I&#39;ve
-                contributed to Department of Defense research by developing
-                digital twin environments and automated logging solutions for
-                industrial control systems. I&#39;ve also supported nonprofits
-                through custom web development and optimized SEO and analytics
-                integration.
+                My experience spans Docker, Kubernetes, CI/CD pipelines, and
+                secure Linux infrastructure. At NAVFAC, I&#39;ve contributed to DoD
+                research—developing digital twin systems and automating threat
+                detection for industrial networks.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                Whether it&#39;s automating deployments, hardening Linux
-                systems, or simulating edge devices in air-gapped environments,
-                I focus on practical, scalable solutions that align with
-                real-world security and performance needs. My goal is to bring a
-                mission-driven mindset to DevSecOps, software development, or
-                cybersecurity engineering roles where I can continue learning
-                and contributing to secure, reliable systems.
+                I apply a mission-driven mindset to solve real-world problems in
+                DevSecOps, software engineering, and automation. I thrive in
+                environments that demand critical thinking, hands-on
+                implementation, and continuous learning.
               </p>
             </div>
           </div>
