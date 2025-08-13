@@ -1,3 +1,4 @@
+// src/app/work-experience/page.tsx
 "use client";
 
 import {
@@ -23,12 +24,12 @@ const experiences: Experience[] = [
     role: "Computer Science Research Assistant",
     company:
       "Naval Facilities Engineering & Expeditionary Warfare Center (NAVFAC EXWC)",
-    date: "Oct 2024 – Present",
+    date: "Oct 2024 - Present",
     current: true,
     description: [
       "Built a modular microservices environment with Docker Compose (>8 services) for PLCs, sensors, and MQTT-based interfaces.",
       "Deployed services to a local Kubernetes (k3s) cluster with YAML-defined health checks, service discovery, and automated restarts across VMs.",
-      "Solved air-gapped image distribution using containerd’s `ctr` and a local registry; documented repeatable workflows.",
+      "Solved air-gapped image distribution using containerd's `ctr` and a local registry; documented repeatable workflows.",
       "Scripted control logic and basic anomaly detection in Python for real-time monitoring and fault simulation.",
       "Maintained Ubuntu hosts: package updates, resource tuning, and service hardening across nodes.",
     ],
@@ -46,7 +47,7 @@ const experiences: Experience[] = [
   {
     role: "Front-End Web Developer",
     company: "StelEsthetics",
-    date: "Feb 2022 – Present",
+    date: "Feb 2022 - Present",
     current: true,
     description: [
       "Designed and shipped a responsive site (Webflow) with mobile-first layouts, SEO, and embedded booking—contributing to a ~15% lift in appointments in the first quarter post-launch.",
@@ -68,9 +69,9 @@ const experiences: Experience[] = [
   {
     role: "Business Analyst Intern — Quality Assurance",
     company: "Accenture (Cisco engagement)",
-    date: "Jul 2023 – Aug 2023",
+    date: "Jul 2023 - Aug 2023",
     description: [
-      "Contributed to QA on Cisco’s purchasing site using SQL-driven checks and test cases; helped surface and track defects impacting 10k+ monthly visitors.",
+      "Contributed to QA on Cisco's purchasing site using SQL-driven checks and test cases; helped surface and track defects impacting 10k+ monthly visitors.",
       "Coordinated with Cisco stakeholders and Accenture teams; documented findings and next steps for cross-functional follow-up.",
       "Delivered a sustainability capstone concept (VR education tool) illustrating environmental costs of consumer choices.",
     ],
@@ -79,7 +80,7 @@ const experiences: Experience[] = [
   {
     role: "Hospital Corpsman",
     company: "United States Navy",
-    date: "Aug 2008 – Aug 2011",
+    date: "Aug 2008 - Aug 2011",
     description: [
       "Provided trauma and preventive care for 200+ personnel in austere, high-pressure settings using structured protocols.",
       "Led triage during training operations—skills analogous to incident triage, prioritization, and clear escalation paths.",
@@ -100,7 +101,7 @@ const leadership: Experience[] = [
   {
     role: "Team Member, CSUN Cybersecurity Club",
     company: "California State University, Northridge",
-    date: "May 2025 – Present",
+    date: "May 2025 - Present",
     description: [
       "Built a centralized logging stack (syslog-ng, PostgreSQL, Flask) to support the Cyber Defense Team with real-time aggregation and search.",
       "Enabled structured analysis and faster timelines for incident response in CCDC practice environments.",
@@ -110,7 +111,7 @@ const leadership: Experience[] = [
   {
     role: "Front-End Web Developer",
     company: "Association for Computing Machinery, CSUN Chapter",
-    date: "Jul 2024 – Jul 2025",
+    date: "Jul 2024 - Jul 2025",
     description: [
       "Developed a mobile-first site with Bootstrap/HTML/JS to streamline event promotion and member onboarding.",
       "Improved cross-browser rendering and accessibility for 150+ active members.",
@@ -173,7 +174,12 @@ function ExperienceCard({
 
 export default function ProfessionalExperience(): React.ReactElement {
   return (
-    <MotionSection ariaLabel="Work experience section">
+    <MotionSection
+      ariaLabel="Work experience section"
+      initial={false} // ensure visible immediately on small screens
+      viewport={{ once: true, amount: 0.01 }} // very low threshold for mobile viewports
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="max-w-5xl mx-auto space-y-10">
         <SectionHeader
           title="Professional Experience"
@@ -186,7 +192,7 @@ export default function ProfessionalExperience(): React.ReactElement {
               key={`${exp.company}-${exp.role}`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.35, delay: i * 0.05 }}
             >
               <ExperienceCard exp={exp} highlightCurrent />
@@ -205,7 +211,7 @@ export default function ProfessionalExperience(): React.ReactElement {
               key={`${exp.company}-${exp.role}`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.35, delay: i * 0.05 }}
             >
               <ExperienceCard exp={exp} />
