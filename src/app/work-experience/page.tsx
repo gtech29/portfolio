@@ -48,7 +48,6 @@ const experiences: Experience[] = [
     role: "Front-End Web Developer",
     company: "StelEsthetics",
     date: "Feb 2022 - Present",
-    current: true,
     description: [
       "Designed and shipped a responsive site (Webflow) with mobile-first layouts, SEO, and embedded booking—contributing to a ~15% lift in appointments in the first quarter post-launch.",
       "Integrated Google Analytics with goals/funnels to monitor conversions; reduced bounce rate ~25% through targeted UX fixes.",
