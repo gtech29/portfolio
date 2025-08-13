@@ -72,7 +72,7 @@ const experiences: Experience[] = [
     description: [
       "Contributed to QA on Cisco's purchasing site using SQL-driven checks and test cases; helped surface and track defects impacting 10k+ monthly visitors.",
       "Coordinated with Cisco stakeholders and Accenture teams; documented findings and next steps for cross-functional follow-up.",
-      "Delivered a sustainability capstone concept (VR education tool) illustrating environmental costs of consumer choices.",
+      "Delivered a sustainability capstone concept (AR education tool) illustrating environmental costs of consumer choices.",
     ],
     tags: ["Agile", "SQL", "QA", "Test Cases", "Stakeholder Communication"],
   },
