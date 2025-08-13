@@ -1,117 +1,145 @@
-// src/components/Hero.tsx
+// src/components/Landing.tsx
 "use client";
 
 import React from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
+import { MotionSection, Chip } from "@/components/ui/ui-shared";
 
-// Local type definitions
 type SocialLink = {
   href: string;
   label: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-};
-
-type Tag = {
-  label: string;
-  bg: string;
-  text: string;
+  external?: boolean;
 };
 
 const SOCIALS: SocialLink[] = [
   { href: "mailto:juan.rodriguez.517@my.csun.edu", label: "Email", icon: Mail },
-  { href: "https://github.com/gtech29", label: "GitHub", icon: Github },
+  {
+    href: "https://github.com/gtech29",
+    label: "GitHub",
+    icon: Github,
+    external: true,
+  },
   {
     href: "https://www.linkedin.com/in/juan-rodriguez-26b39427a/",
     label: "LinkedIn",
     icon: Linkedin,
+    external: true,
   },
 ];
 
-const TAGS: Tag[] = [
-  { label: "Software Engineering", bg: "bg-gray-100", text: "text-[#1f2937]" },
-  {
-    label: "Full-Stack Development",
-    bg: "bg-gray-100",
-    text: "text-[#1f2937]",
-  },
-  { label: "Cybersecurity", bg: "bg-gray-100", text: "text-[#1f2937]" },
-  { label: "Applied AI", bg: "bg-gray-100", text: "text-[#1f2937]" },
+const TAGS = [
+  "Software Engineering",
+  "Full-Stack Development",
+  "Cybersecurity",
+  "DevOps / DevSecOps",
+  "Applied AI",
 ];
 
 export default function Hero(): React.ReactElement {
   return (
-    <section
-      id="hero"
-      className="flex flex-col gap-12 px-6 mt-4 min-h-screen text-black dark:from-gray-950 dark:to-gray-900 dark:text-white pt-6"
+    <MotionSection
+      ariaLabel="Intro section"
+      className="flex flex-col gap-12 px-6 mt-4 min-h-screen text-black dark:text-white"
     >
       {/* Profile & Intro */}
-      <div className="flex flex-col lg:flex-row justify-center items-start gap-8 max-w-3xl mx-auto">
+      <div className="flex flex-col lg:flex-row justify-center items-start gap-8 max-w-4xl mx-auto">
         <div className="flex flex-col-reverse lg:flex-row items-start gap-6 w-full">
           <div className="flex flex-col items-start text-left space-y-4 w-full">
-            <h1 className="text-4xl font-bold">Juan Rodriguez</h1>
-            <h2 className="text-lg text-gray-600 dark:text-gray-300">
-              Software Engineer @ NAVFAC
-              <br />
-              B.S. Computer Science, CSUN &#39;26
-            </h2>
-            <div className="flex gap-4 text-gray-600 dark:text-gray-400">
-              {SOCIALS.map(({ href, label, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  title={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon className="w-5 h-5 hover:text-blue-600 transition-colors duration-200" />
-                </a>
-              ))}
-            </div>
+            <h1 className="text-4xl font-bold tracking-tight">
+              Juan Rodriguez
+            </h1>
 
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Software Engineer @ NAVFAC • B.S. Computer Science, CSUN &#39;26
+            </p>
+
+            {/* Socials */}
+            <ul
+              className="flex gap-4 text-gray-600 dark:text-gray-400"
+              aria-label="Social links"
+            >
+              {SOCIALS.map(({ href, label, icon: Icon, external }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    aria-label={label}
+                    title={label}
+                    {...(external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="inline-flex items-center gap-2 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    <Icon className="w-5 h-5" />
+                    <span className="sr-only">{label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* Tags */}
             <div className="flex flex-wrap gap-2">
-              {TAGS.map((tag) => (
-                <span
-                  key={tag.label}
-                  className={`text-xs md:text-sm font-medium px-3 py-1 rounded-full border border-[#d1d5db] ${tag.bg} ${tag.text} hover:scale-105 transition-transform duration-200`}
-                >
-                  {tag.label}
-                </span>
+              {TAGS.map((label) => (
+                <Chip key={label} label={label} />
               ))}
             </div>
 
-            <div className="space-y-4 pt-4 text-gray-800 dark:text-gray-200">
+            {/* Summary */}
+            <div className="space-y-4 pt-4 text-gray-800 dark:text-gray-200 max-w-prose">
               <p className="text-gray-700 dark:text-gray-300">
-                I&#39;m a U.S. Navy veteran and CSUN Computer Science student
-                specializing in full-stack development, software engineering, cybersecurity, and
-                DevSecOps. I build systems that prioritize scalability,
-                reliability, and security.
+                U.S. Navy veteran and CSUN Computer Science student focused on
+                full-stack engineering, cybersecurity, and DevSecOps. I build
+                systems that prioritize scalability, reliability, and security.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                My experience spans Docker, Kubernetes, CI/CD pipelines, and
-                secure Linux infrastructure. At NAVFAC, I&#39;ve contributed to DoD
-                research by developing digital twin systems and automating threat
-                detection for industrial networks.
+                Hands-on with Docker, Kubernetes, CI/CD, and secure Linux
+                infrastructure. At NAVFAC, I&#39;ve contributed to DoD research by
+                developing ICS digital twins and automating threat detection
+                workflows for industrial networks.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                I apply a mission-driven mindset to solve real-world problems in
-                software engineering. I thrive in
-                environments that demand critical thinking, hands-on
-                implementation, and continuous learning.
+                I like mission-driven problems, clear interfaces, and automation
+                that reduces toil.
               </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="/projects/digital-twin"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8badec] text-black font-medium shadow hover:opacity-90"
+              >
+                View Projects <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900"
+              >
+                Contact Me
+              </Link>
+              <a
+                href="https://gtech29.github.io/resume/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900"
+              >
+                Résumé (external)
+              </a>
             </div>
           </div>
 
-          <div className="shrink-0">
+          {/* Avatar */}
+          <div className="shrink-0 self-start">
             <Image
               src="/profile.webp"
-              alt="Juan Rodriguez"
-              width={120}
-              height={120}
+              alt="Portrait of Juan Rodriguez"
+              width={160}
+              height={160}
+              sizes="(min-width: 1024px) 160px, 120px"
               className="rounded-full shadow-md"
               priority
             />
@@ -119,28 +147,24 @@ export default function Hero(): React.ReactElement {
         </div>
       </div>
 
-      {/* About + Technical Details */}
-      <div className="max-w-3xl mx-auto text-gray-800 dark:text-gray-200">
+      {/* About + Navigation */}
+      <div className="max-w-4xl mx-auto text-gray-800 dark:text-gray-200">
         <h2 className="text-3xl font-semibold mb-6">About the Site</h2>
 
         <p className="mb-4">
-          This site reflects my transition into software engineering and
-          highlights key projects developed through hands-on experience in
-           software engineering, cybersecurity, and client-focused development. It&#39;s
-          designed as a clean, accessible space to document my learning journey,
-          showcase applied skills, and support my continued growth in the tech
-          industry.
+          This portfolio highlights applied work across software engineering,
+          cybersecurity, and client-focused development. It&#39;s clean, accessible,
+          and focused on real, hands-on skills.
         </p>
 
-        <div className="w-full max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-screen-md mx-auto px-2 sm:px-0">
           <ul className="space-y-4 list-disc list-inside text-gray-700 dark:text-gray-300 break-words">
             <li>
               <Link href="/work-experience" className="text-blue-700 underline">
                 Professional Experience
               </Link>{" "}
-              — Highlights from research and development projects, with hands-on
-              work in automation, security-focused software development, and
-              DevSecOps practices.
+              — Research and development work including automation,
+              security-aware design, and DevSecOps practices.
             </li>
             <li>
               <Link
@@ -149,16 +173,15 @@ export default function Hero(): React.ReactElement {
               >
                 Projects
               </Link>{" "}
-              — Selected work focused on cybersecurity, system
-              simulation, and cloud-native deployments using tools like Docker,
-              CI/CD pipelines, and version control.
+              — ICS simulation, centralized logging, and cloud-native
+              deployments (Docker, CI/CD, Git).
             </li>
             <li>
               <Link href="/education" className="text-blue-700 underline">
                 Education
               </Link>{" "}
-              — Overview of my academic background, including coursework in
-              software engineering, system architecture, and secure programming.
+              — Coursework in software engineering, systems, and secure
+              programming.
             </li>
             <li>
               <a
@@ -167,23 +190,21 @@ export default function Hero(): React.ReactElement {
                 rel="noopener noreferrer"
                 className="text-blue-700 underline"
               >
-                Resume
+                Résumé
               </a>{" "}
-              — An interactive summary of my technical skills, certifications,
-              and experience tailored to software development and
-              security-driven roles.
+              — Interactive summary of skills, certifications, and experience.
             </li>
           </ul>
         </div>
 
         <h3 className="text-2xl font-semibold mt-10 mb-4">Built With</h3>
         <p className="mb-2">
-          This site was built using <strong>Next.js</strong>, styled with{" "}
+          Built with <strong>Next.js</strong>, styled with{" "}
           <strong>Tailwind CSS</strong>, and deployed via{" "}
           <strong>Vercel</strong>.
         </p>
         <p>
-          Source code available at:
+          Source code:
           <br />
           <a
             href="https://github.com/gtech29/portfolio"
@@ -195,6 +216,6 @@ export default function Hero(): React.ReactElement {
           </a>
         </p>
       </div>
-    </section>
+    </MotionSection>
   );
 }

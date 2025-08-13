@@ -1,6 +1,13 @@
 "use client";
 
+import {
+  MotionSection,
+  SectionHeader,
+  Card,
+  Chip,
+} from "@/components/ui/ui-shared";
 import { motion } from "framer-motion";
+import React from "react";
 
 export type Experience = {
   role: string;
@@ -15,83 +22,76 @@ const experiences: Experience[] = [
   {
     role: "Computer Science Research Assistant",
     company:
-      "Naval Facilities Engineering/Expeditionary Warfare Center (NAVFC/EXWC)",
-    date: "October 2024 - Present",
+      "Naval Facilities Engineering & Expeditionary Warfare Center (NAVFAC EXWC)",
+    date: "Oct 2024 – Present",
     current: true,
     description: [
-      "Built and configured a modular microservices architecture using Docker Compose with over 8 services, including PLCs, sensors, and MQTT based interfaces.",
-      "Deployed all services into a Kubernetes cluster using k3s, with YAML defined health checks, service discovery, and automated restarts across virtualized infrastructure.",
-      "Resolved image transfer challenges in an air gapped environment using Docker's ctr command and a fully local container registry.",
-      "Used Python to script control logic and integrate anomaly detection for real-time monitoring and fault simulation.",
-      "Maintained Ubuntu based infrastructure, updated system packages, and ensured low resource consumption across all nodes",
+      "Built a modular microservices environment with Docker Compose (>8 services) for PLCs, sensors, and MQTT-based interfaces.",
+      "Deployed services to a local Kubernetes (k3s) cluster with YAML-defined health checks, service discovery, and automated restarts across VMs.",
+      "Solved air-gapped image distribution using containerd’s `ctr` and a local registry; documented repeatable workflows.",
+      "Scripted control logic and basic anomaly detection in Python for real-time monitoring and fault simulation.",
+      "Maintained Ubuntu hosts: package updates, resource tuning, and service hardening across nodes.",
     ],
     tags: [
       "Docker",
       "Kubernetes",
+      "k3s",
       "Python",
-      "CI/CD",
-      "SSH",
-      "VirtualBox",
-      "Ubuntu",
-      "Python",
-      "React",
+      "MQTT",
+      "containerd",
+      "Linux",
+      "DevOps",
     ],
   },
   {
     role: "Front-End Web Developer",
     company: "StelEsthetics",
-    date: "February 2022 - Present",
+    date: "Feb 2022 – Present",
     current: true,
     description: [
-      "Designed and deployed a responsive Webflow site with mobile-first layouts, SEO optimization, and embedded booking tools, contributing to a 15% increase in appointments during the first quarter.",
-      "Integrated Google Analytics and goal tracking to monitor conversions, reduce bounce rates by 25%, and guide ongoing UX improvements.",
-      "Worked closely with the client through biweekly review sessions to refine service pages and seasonal campaigns.",
-      "Collaborated with the client through monthly review cycles to update service pages, publish seasonal campaigns, and maintain alignment with branding goals.",
-      "Monitored and improved site performance by reducing page load time by 40% through image compression and deferred script loading.",
-      "Currently migrating the site to a MERN-like architecture using MongoDB, React, and Next.js, deployed via Vercel, with plans to implement secure login functionality and dynamic content management.",
+      "Designed and shipped a responsive site (Webflow) with mobile-first layouts, SEO, and embedded booking—contributing to a ~15% lift in appointments in the first quarter post-launch.",
+      "Integrated Google Analytics with goals/funnels to monitor conversions; reduced bounce rate ~25% through targeted UX fixes.",
+      "Partnered with the client in regular review cycles to update services and seasonal campaigns while maintaining brand consistency.",
+      "Optimized performance (≈40% faster loads) via image compression and deferred script loading.",
+      "Migrating to a React Router/Next.js app (MERN-style) for maintainability and new features; implementing an online store and secure auth.",
     ],
     tags: [
       "Webflow",
+      "React",
+      "Next.js",
       "Responsive Design",
-      "UX",
-      "Analytics",
-      "Client Engagement",
+      "SEO",
+      "Google Analytics",
+      "Performance",
     ],
   },
   {
-    role: "Business Analyst Intern - Quality Assurance",
-    company: "Accenture, LLC",
-    date: "July 2023 - August 2023",
-    current: true,
+    role: "Business Analyst Intern — Quality Assurance",
+    company: "Accenture (Cisco engagement)",
+    date: "Jul 2023 – Aug 2023",
     description: [
-      "Assisted in QA testing on Cisco's purchasing website using SQL scripts, contributing to the detection and resolution of bugs, which helped maintain a seamless user experience for 10,000+ monthly visitors.",
-      "Facilitated strategic meetings with Cisco stakeholders, where I collaborated with Accenture teams to enhance project outcomes, gaining valuable experience in cross-functional teamwork and project management.",
-      "Participated in a capstone project focused on sustainability innovation, where I proposed a VR-based educational tool to highlight the environmental impact of consumer choices, such as visualizing pollution generated by purchasing bottled water.",
+      "Contributed to QA on Cisco’s purchasing site using SQL-driven checks and test cases; helped surface and track defects impacting 10k+ monthly visitors.",
+      "Coordinated with Cisco stakeholders and Accenture teams; documented findings and next steps for cross-functional follow-up.",
+      "Delivered a sustainability capstone concept (VR education tool) illustrating environmental costs of consumer choices.",
     ],
-    tags: [
-      "Agile",
-      "SQL",
-      "Quality Assurance Testing",
-      "User Experience (UX) Awareness",
-    ],
+    tags: ["Agile", "SQL", "QA", "Test Cases", "Stakeholder Communication"],
   },
   {
     role: "Hospital Corpsman",
     company: "United States Navy",
-    date: "August 2008 - August 2011",
-    current: true,
+    date: "Aug 2008 – Aug 2011",
     description: [
-      "Provided trauma care and preventive treatment for over 200 Navy and Marine Corps personnel in high-pressure and austere environments, applying structured protocols and rapid decision-making under uncertainty.",
-      "Conducted triage assessments during training operations, prioritizing critical cases using systematic evaluation—an approach analogous to debugging, ticket triage, and incident response workflows in engineering.",
-      "Supported risk mitigation by performing routine sanitation inspections, managing medical inventories, and enforcing health standards to reduce operational downtime and maintain mission readiness.",
-      "Collaborated with cross-functional military teams to deliver care, demonstrate teamwork, adherence to standard operating procedures, and clear communication—key competencies in Agile software development.",
+      "Provided trauma and preventive care for 200+ personnel in austere, high-pressure settings using structured protocols.",
+      "Led triage during training operations—skills analogous to incident triage, prioritization, and clear escalation paths.",
+      "Reduced operational risk via sanitation inspections, inventory controls, and adherence to health standards.",
+      "Collaborated across units with disciplined communication—directly transferable to Agile teamwork and on-call procedures.",
     ],
     tags: [
-      "Structured Problem-Solving",
-      "Operational Efficiency",
-      "Incident Response Thinking",
-      "Threat Prevention Mindset",
-      "Compliance & Standards",
+      "Incident Response",
+      "Operations",
+      "Procedures",
+      "Teamwork",
+      "Risk Reduction",
     ],
   },
 ];
@@ -102,141 +102,117 @@ const leadership: Experience[] = [
     company: "California State University, Northridge",
     date: "May 2025 – Present",
     description: [
-      "Built a centralized logging system using syslog-ng, PostgreSQL, and Flask to support CSUN’s Cyber Defense Team with real-time log aggregation, search, and incident response reporting.",
-      "Enabled structured analysis of security events across isolated environments, improving detection and forensic capabilities for CCDC qualifiers.",
+      "Built a centralized logging stack (syslog-ng, PostgreSQL, Flask) to support the Cyber Defense Team with real-time aggregation and search.",
+      "Enabled structured analysis and faster timelines for incident response in CCDC practice environments.",
     ],
-    tags: ["Syslog-ng", "PostgreSQL", "Flask", "Cybersecurity"],
+    tags: ["syslog-ng", "PostgreSQL", "Flask", "Cybersecurity", "Forensics"],
   },
   {
     role: "Front-End Web Developer",
     company: "Association for Computing Machinery, CSUN Chapter",
-    date: "July 2024 – July 2025",
+    date: "Jul 2024 – Jul 2025",
     description: [
-      "Developed a mobile-first website with Bootstrap, HTML, and JavaScript to streamline event promotion and chapter engagement.",
-      "Implemented UI improvements to ensure consistent rendering across platforms, supporting uptime and accessibility for 150+ active members.",
-      "Coordinated with board members to post real-time updates for events and announcements.",
+      "Developed a mobile-first site with Bootstrap/HTML/JS to streamline event promotion and member onboarding.",
+      "Improved cross-browser rendering and accessibility for 150+ active members.",
+      "Coordinated with board members to publish real-time updates for events and announcements.",
     ],
     tags: ["Bootstrap", "HTML", "JavaScript", "Accessibility", "Leadership"],
   },
 ];
 
+// helper to de-dupe tags in case of copy/paste duplicates
+const uniq = (arr: string[]) => Array.from(new Set(arr));
+
+function ExperienceCard({
+  exp,
+  highlightCurrent,
+}: {
+  exp: Experience;
+  highlightCurrent?: boolean;
+}) {
+  return (
+    <Card>
+      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+        <h4 className="text-lg font-semibold">
+          {exp.role}{" "}
+          {highlightCurrent && exp.current && (
+            <span className="ml-2 px-2 py-0.5 text-[11px] font-semibold rounded-full bg-green-100 text-green-800">
+              Current
+            </span>
+          )}
+        </h4>
+        <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+          {exp.date}
+        </p>
+      </header>
+
+      <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+        {exp.company}
+      </p>
+
+      {exp.description?.length > 0 && (
+        <ul className="list-disc pl-5 text-sm text-gray-800 dark:text-gray-200 space-y-1 mt-3">
+          {exp.description.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
+      )}
+
+      {exp.tags?.length > 0 && (
+        <ul className="flex flex-wrap gap-2 mt-3">
+          {uniq(exp.tags).map((tag) => (
+            <li key={`${exp.company}-${exp.role}-${tag}`}>
+              <Chip label={tag} className="bg-gray-100 dark:bg-gray-900" />
+            </li>
+          ))}
+        </ul>
+      )}
+    </Card>
+  );
+}
+
 export default function ProfessionalExperience(): React.ReactElement {
   return (
-    <motion.section
-      id="work-experience"
-      className="space-y-12 px-6 py-12 bg-white dark:bg-gray-950 text-black dark:text-white min-h-screen"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <h3 className="text-2xl font-bold flex items-center gap-2 mb-1">
-        Professional Experience
-      </h3>
-      <p className="text-gray-700 dark:text-gray-300 mt-0 mb-6">
-        Each role here reflects experiences that shaped how I solve problems,
-        collaborate, and build with purpose. They come from environments that
-        demanded adaptability, precision, and continuous learning.
-      </p>
+    <MotionSection ariaLabel="Work experience section">
+      <div className="max-w-5xl mx-auto space-y-10">
+        <SectionHeader
+          title="Professional Experience"
+          subtitle="Impact-focused roles spanning software, DevOps, and operations. Emphasis on secure systems, automation, collaboration, and clear delivery."
+        />
 
-      <div className="space-y-12">
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={`${exp.company}-${exp.role}`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="space-y-4"
-          >
-            <div>
-              <h4 className="text-xl font-semibold flex items-center gap-2">
-                {exp.role}
-                {index === 0 && (
-                  <span className="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800 shadow-sm">
-                    Current
-                  </span>
-                )}
-              </h4>
-              <div className="flex items-center gap-2 flex-wrap">
-                <p className="text-gray-600 dark:text-gray-300">
-                  {exp.company}
-                </p>
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {exp.date}
-              </p>
-            </div>
-            <ul className="list-disc list-inside text-sm text-gray-800 dark:text-gray-200 space-y-1">
-              {exp.description.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-            <ul className="flex flex-wrap gap-2 mt-2">
-              {exp.tags.map((tag, i) => (
-                <li
-                  key={`${exp.company}-${exp.role}-${tag}-${i}`}
-                  className="px-3 py-1 rounded-full bg-gray-100 text-blue-800 text-xs font-medium shadow-sm hover:bg-blue-200 transition-all"
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-            <hr className="border-gray-200 mt-6" />
-          </motion.div>
-        ))}
+        <div className="space-y-6">
+          {experiences.map((exp, i) => (
+            <motion.div
+              key={`${exp.company}-${exp.role}`}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.35, delay: i * 0.05 }}
+            >
+              <ExperienceCard exp={exp} highlightCurrent />
+            </motion.div>
+          ))}
+        </div>
+
+        <SectionHeader
+          title="Leadership & Professional Development"
+          subtitle="Hands-on contributions to student organizations and security teams—building community and shipping tools that help others move faster."
+        />
+
+        <div className="space-y-6">
+          {leadership.map((exp, i) => (
+            <motion.div
+              key={`${exp.company}-${exp.role}`}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.35, delay: i * 0.05 }}
+            >
+              <ExperienceCard exp={exp} />
+            </motion.div>
+          ))}
+        </div>
       </div>
-
-      <h3 className="text-2xl font-bold flex items-center gap-2 mb-1">
-        Leadership & Professional Development
-      </h3>
-      <p className="text-gray-700 dark:text-gray-300 mt-0 mb-6">
-        These roles demonstrate my commitment to growth, mentorship, and driving
-        impact beyond the classroom. I take initiative in shaping technical
-        communities and building tools that make collaboration easier.
-      </p>
-
-      <div className="space-y-12">
-        {leadership.map((exp, index) => (
-          <motion.div
-            key={`${exp.company}-${exp.role}`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="space-y-4"
-          >
-            <div>
-              <h4 className="text-xl font-semibold flex items-center gap-2">
-                {exp.role}
-              </h4>
-              <div className="flex items-center gap-2 flex-wrap">
-                <p className="text-gray-600 dark:text-gray-300">
-                  {exp.company}
-                </p>
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {exp.date}
-              </p>
-            </div>
-            <ul className="list-disc list-inside text-sm text-gray-800 dark:text-gray-200 space-y-1">
-              {exp.description.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-            <ul className="flex flex-wrap gap-2 mt-2">
-              {exp.tags.map((tag, i) => (
-                <li
-                  key={`${exp.company}-${exp.role}-${tag}-${i}`}
-                  className="px-3 py-1 rounded-full bg-gray-100 text-blue-800 text-xs font-medium shadow-sm hover:bg-blue-200 transition-all"
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-            {index < leadership.length - 1 && (
-              <hr className="border-gray-200 mt-6" />
-            )}
-          </motion.div>
-        ))}
-      </div>
-    </motion.section>
+    </MotionSection>
   );
 }

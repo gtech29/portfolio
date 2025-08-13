@@ -119,7 +119,7 @@ export default function ContactPage() {
       <div className="max-w-xl mx-auto space-y-8">
         <h1 className="text-3xl font-bold text-center">Contact</h1>
         <p className="text-gray-700 dark:text-gray-300 mt-0 mb-6 text-center">
-          Want to collaborate or ask about a project? Drop a note—happy to chat.
+          Want to collaborate or ask about a project? Drop a note, happy to chat!
         </p>
 
         <form
