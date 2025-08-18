@@ -31,35 +31,36 @@ const STACK = [
 const FEATURES = [
   {
     icon: <Server className="w-5 h-5" aria-hidden />,
-    title: "Centralized intake",
-    desc: "Receives external system messages for consolidated monitoring and historical analysis.",
+    title: "Automated deployment",
+    desc: "Scripted install process pulls and runs syslog-ng containers without manual intervention.",
   },
   {
     icon: <Database className="w-5 h-5" aria-hidden />,
-    title: "Structured storage",
-    desc: "Relational schema supports fast queries, filters, and event timeline reconstruction.",
+    title: "Version-controlled",
+    desc: "Hosted on Forgejo Git for collaboration, updates, and reproducible deployments across VMs.",
   },
   {
     icon: <ShieldCheck className="w-5 h-5" aria-hidden />,
-    title: "Hardened environment",
-    desc: "Network access controls and service level restrictions reduce exposure and align with best practices.",
+    title: "Competition-ready",
+    desc: "Designed for reliability under time pressure with built-in checks and fallback logic.",
   },
   {
     icon: <Network className="w-5 h-5" aria-hidden />,
-    title: "Protocol validation",
-    desc: "Delivery verified with native tools and low level UDP testing for endpoint compatibility.",
+    title: "Seamless integration",
+    desc: "Supports integration into central logging infrastructure for CCDC competition environments.",
   },
   {
     icon: <FileCog className="w-5 h-5" aria-hidden />,
-    title: "Robust parsing",
-    desc: "Resolved formatting and missing field issues to stabilize automated inserts.",
+    title: "Structured workflow",
+    desc: "Built around a main() scaffold with modular steps for future enhancements.",
   },
   {
     icon: <BarChart4 className="w-5 h-5" aria-hidden />,
-    title: "Ready for dashboards and CI/CD",
-    desc: "Clean interfaces and docs enable future UI, alerting, and pipeline automation.",
+    title: "Foundation for scaling",
+    desc: "Provides a base for CI/CD pipelines, dashboards, and expanded monitoring capabilities.",
   },
 ];
+
 
 export default function CentralizedLoggingSection() {
   return (
@@ -69,12 +70,12 @@ export default function CentralizedLoggingSection() {
           title="Centralized Logging System"
           subtitle={
             <>
-              A secure, virtualized Linux environment that centralizes host
-              activity into a single source of truth. It ingests logs,
-              normalizes records in a relational PostgreSQL database, and
-              exposes clear interfaces for querying, timeline reconstruction,
-              and future dashboard integration. Built with security hardening,
-              DevOps best practices, and automation in mind.
+              For my role in the Collegiate Cyber Defense Competition (CCDC), I
+              developed and documented an automation script to streamline the
+              deployment of a syslog-ng container on competition systems.
+              Instead of manually typing commands during time-sensitive
+              scenarios, the script ensures consistent installation and
+              configuration across Linux machines.
             </>
           }
         />
@@ -97,15 +98,16 @@ export default function CentralizedLoggingSection() {
           <h4 className="text-lg font-semibold mb-2">Outcomes</h4>
           <ul className="list-disc list-inside space-y-1 text-gray-800 dark:text-gray-200 text-sm">
             <li>
-              Central point for log review and timeline reconstruction during
-              exercises.
+              Automated syslog-ng deployment reduced setup time and errors
+              during competition prep.
             </li>
             <li>
-              Reliable ingestion across varied endpoints after parser and field
-              fixes.
+              Version-controlled installer ensured reproducibility and
+              consistency across VMs.
             </li>
             <li>
-              Documented path to integrate alerts, dashboards, and CI/CD hooks.
+              Established a modular framework for future integration with
+              dashboards, alerts, and pipelines.
             </li>
           </ul>
         </Card>
