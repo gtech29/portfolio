@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import CentralizedLoggingSection from "@/app/projects/central-logging/section";
+import AcmWebsite from "@/app/projects/acm-website/section";
 
 export const metadata: Metadata = {
-  title: "Centralized Logging System | Projects",
+  title: "ACM @ CSUN Chapter | Projects",
   description:
     "Hardened, centralized logging on Linux with Docker and PostgreSQL. Consolidates host activity, supports incident response, and prepares for dashboards and CI/CD.",
   openGraph: {
-    title: "Centralized Logging System",
+    title: "ACM @ CSUN Chapter",
     description:
       "Hardened, centralized logging on Linux with Docker and PostgreSQL. Consolidates host activity and supports incident response.",
     type: "article",
@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <CentralizedLoggingSection />;
+  return <AcmWebsite />;
 }

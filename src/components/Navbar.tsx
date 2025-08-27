@@ -33,7 +33,7 @@ const links: LinkType[] = [
     label: "Projects",
     subLinks: [
       { href: "/projects/digital-twin", label: "Digital Twin" },
-      { href: "/projects/central-logging", label: "Central Logging System" },
+      { href: "/projects/acm-website", label: "ACM @ CSUN Website" },
       { href: "/projects/stelesthetics", label: "StelEsthetics" },
     ],
   },
