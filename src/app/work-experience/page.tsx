@@ -98,14 +98,15 @@ const experiences: Experience[] = [
 
 const leadership: Experience[] = [
   {
-    role: "Team Member, CSUN Cybersecurity Club",
-    company: "California State University, Northridge",
+    role: "CodePath Cybersecurity Course",
+    company: "CodePath",
     date: "May 2025 - Present",
     description: [
-      "Built a centralized logging stack (syslog-ng, PostgreSQL, Flask) to support the Cyber Defense Team with real-time aggregation and search.",
-      "Enabled structured analysis and faster timelines for incident response in CCDC practice environments.",
+      "Completed a 10-week immersive course covering logging, incident response, intrusion detection, SIEM, and threat hunting with industry tools such as Splunk and Wireshark.",
+      "Conducted hands-on threat hunting exercises, analyzing network traffic and system logs to identify anomalies and potential intrusions.",
+      "Collaborated with peers on case studies using Splunk Catalyst, building reports and response timelines to strengthen investigative and documentation skills.",
     ],
-    tags: ["syslog-ng", "PostgreSQL", "Flask", "Cybersecurity", "Forensics"],
+    tags: ["SIEM", "Splunk", "Wireshark", "Cybersecurity", "Digital Forensics"],
   },
   {
     role: "Front-End Web Developer",
