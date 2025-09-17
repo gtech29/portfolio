@@ -2,7 +2,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
 import { MotionSection, Chip } from "@/components/ui/ui-shared";
@@ -53,7 +52,8 @@ export default function Hero(): React.ReactElement {
             </h1>
 
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Software Engineer @ NAVFAC • B.S. Computer Science, CSUN &#39;26
+              • Computer Science Research Assistant @ NAVFAC/EXWC<br></br> • B.S. Computer
+              Science, CSUN &#39;26
             </p>
 
             {/* Socials */}
@@ -89,21 +89,29 @@ export default function Hero(): React.ReactElement {
             {/* Summary */}
             <div className="space-y-4 pt-4 text-gray-800 dark:text-gray-200 max-w-prose">
               <p className="text-gray-700 dark:text-gray-300">
-                U.S. Navy veteran and CSUN Computer Science student focused on
-                full-stack engineering, cybersecurity, and DevSecOps. I build
-                systems that prioritize scalability, reliability, and security.
+                Welcome to my site! I am a U.S. Navy veteran and a Computer
+                Science student at California State University, Northridge
+                (CSUN). Throughout my studies, I have developed projects that
+                highlight my experience in full-stack software development.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                Hands-on with Docker, Kubernetes, CI/CD, and secure Linux
-                infrastructure. At NAVFAC, I&#39;ve contributed to DoD research by
-                developing ICS digital twins and automating threat detection
-                workflows for industrial networks.
+                I also served as the webmaster for CSUN&#39;s ACM chapter and
+                participated in the Layer 8 Cybersecurity Club, where I gained
+                hands-on experience with cybersecurity best practices, Linux
+                infrastructure, and other real-world technical skills. I am
+                currently working as a Computer Science Research Assistant at
+                the Naval Facilities Engineering and Expeditionary Warfare
+                Center, where I am developing a digital twin tool to help
+                modernize system controls.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300">
-                I like mission-driven problems, clear interfaces, and automation
-                that reduces toil.
+                This work enables more reliable testing, improves system
+                efficiency, and reduces risk in real-world environments.
+                <br></br>Please feel free to explore my portfolio. If you have
+                any questions or would like to connect, I&#39;d be glad to hear
+                from you.
               </p>
             </div>
 
@@ -131,90 +139,7 @@ export default function Hero(): React.ReactElement {
               </a>
             </div>
           </div>
-
-          {/* Avatar */}
-          <div className="shrink-0 self-start">
-            <Image
-              src="/profile.webp"
-              alt="Portrait of Juan Rodriguez"
-              width={160}
-              height={160}
-              sizes="(min-width: 1024px) 160px, 120px"
-              className="rounded-full shadow-md"
-              priority
-            />
-          </div>
         </div>
-      </div>
-
-      {/* About + Navigation */}
-      <div className="max-w-4xl mx-auto text-gray-800 dark:text-gray-200">
-        <h2 className="text-3xl font-semibold mb-6">About the Site</h2>
-
-        <p className="mb-4">
-          This portfolio highlights applied work across software engineering,
-          cybersecurity, and client-focused development. It&#39;s clean, accessible,
-          and focused on real, hands-on skills.
-        </p>
-
-        <div className="w-full max-w-screen-md mx-auto px-2 sm:px-0">
-          <ul className="space-y-4 list-disc list-inside text-gray-700 dark:text-gray-300 break-words">
-            <li>
-              <Link href="/work-experience" className="text-blue-700 underline">
-                Professional Experience
-              </Link>{" "}
-              — Research and development work including automation,
-              security-aware design, and DevSecOps practices.
-            </li>
-            <li>
-              <Link
-                href="/projects/digital-twin"
-                className="text-blue-700 underline"
-              >
-                Projects
-              </Link>{" "}
-              — ICS simulation, centralized logging, and cloud-native
-              deployments (Docker, CI/CD, Git).
-            </li>
-            <li>
-              <Link href="/education" className="text-blue-700 underline">
-                Education
-              </Link>{" "}
-              — Coursework in software engineering, systems, and secure
-              programming.
-            </li>
-            <li>
-              <a
-                href="https://gtech29.github.io/resume/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-700 underline"
-              >
-                Résumé
-              </a>{" "}
-              — Interactive summary of skills, certifications, and experience.
-            </li>
-          </ul>
-        </div>
-
-        <h3 className="text-2xl font-semibold mt-10 mb-4">Built With</h3>
-        <p className="mb-2">
-          Built with <strong>Next.js</strong>, styled with{" "}
-          <strong>Tailwind CSS</strong>, and deployed via{" "}
-          <strong>Vercel</strong>.
-        </p>
-        <p>
-          Source code:
-          <br />
-          <a
-            href="https://github.com/gtech29/portfolio"
-            target="_blank"
-            className="text-blue-700 underline"
-            rel="noopener noreferrer"
-          >
-            github.com/gtech29/portfolio
-          </a>
-        </p>
       </div>
     </MotionSection>
   );
