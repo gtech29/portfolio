@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
 import { MotionSection, Chip } from "@/components/ui/ui-shared";
+import { Analytics } from "@vercel/analytics/next"; 
 
 type SocialLink = {
   href: string;
