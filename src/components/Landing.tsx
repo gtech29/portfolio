@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
 import { MotionSection, Chip } from "@/components/ui/ui-shared";
-import { Analytics } from "@vercel/analytics/next"; 
+import { Analytics } from "@vercel/analytics/next";
 
 type SocialLink = {
   href: string;
@@ -44,6 +44,7 @@ export default function Hero(): React.ReactElement {
       ariaLabel="Intro section"
       className="flex flex-col gap-12 px-6 mt-4 min-h-screen text-black dark:text-white"
     >
+      <Analytics />
       {/* Profile & Intro */}
       <div className="flex flex-col lg:flex-row justify-center items-start gap-8 max-w-4xl mx-auto">
         <div className="flex flex-col-reverse lg:flex-row items-start gap-6 w-full">
@@ -53,8 +54,8 @@ export default function Hero(): React.ReactElement {
             </h1>
 
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              • Computer Science Research Assistant @ NAVFAC/EXWC<br></br> • B.S. Computer
-              Science, CSUN &#39;26
+              • Computer Science Research Assistant @ NAVFAC/EXWC<br></br> •
+              B.S. Computer Science, CSUN &#39;26
             </p>
 
             {/* Socials */}
