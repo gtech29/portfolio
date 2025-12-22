@@ -4,11 +4,11 @@ import AcmWebsite from "@/app/projects/acm-website/section";
 export const metadata: Metadata = {
   title: "ACM @ CSUN Chapter | Projects",
   description:
-    "Hardened, centralized logging on Linux with Docker and PostgreSQL. Consolidates host activity, supports incident response, and prepares for dashboards and CI/CD.",
+    "single page with a responsive layout, cover hero, anchor navigation, theme aware dark mode, and accessible markup. ",
   openGraph: {
     title: "ACM @ CSUN Chapter",
     description:
-      "Hardened, centralized logging on Linux with Docker and PostgreSQL. Consolidates host activity and supports incident response.",
+      "single page with a responsive layout, cover hero, anchor navigation, theme aware dark mode, and accessible markup.",
     type: "article",
   },
 };
