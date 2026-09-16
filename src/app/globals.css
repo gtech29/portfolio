@@ -88,6 +88,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
+  isolation: isolate;
   border-bottom: 1px solid var(--line);
   background: rgba(7, 16, 24, 0.86);
   backdrop-filter: blur(16px);
@@ -848,6 +849,16 @@ button {
   color: var(--text);
 }
 
+.case-study-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+}
+
+.text-link-muted {
+  color: var(--muted-strong);
+}
+
 .platform-visual {
   min-height: 320px;
   padding: 21px;
@@ -1215,6 +1226,10 @@ button {
   color: var(--accent);
 }
 
+.case-study-hero-link {
+  margin-top: 25px;
+}
+
 .case-study-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(250px, 0.9fr);
@@ -1435,7 +1450,7 @@ button {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 960px) {
   .nav-inner,
   .section-shell,
   .footer-inner {
@@ -1456,23 +1471,32 @@ button {
   }
 
   .primary-nav {
-    position: fixed;
-    top: 64px;
+    position: absolute;
+    top: 100%;
     right: 0;
-    bottom: 0;
     left: 0;
+    z-index: 60;
     display: none;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     gap: 0;
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+    max-height: calc(100dvh - 64px);
     padding: 16px 18px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border-top: 1px solid var(--line);
-    background: rgba(7, 16, 24, 0.98);
+    background: var(--bg);
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .primary-nav.is-open {
     display: flex;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .primary-nav a {
@@ -1499,7 +1523,7 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(3rem, 15vw, 5.1rem);
+    font-size: clamp(2.8rem, 8vw, 4.8rem);
   }
 
   .hero-summary {
@@ -1676,7 +1700,8 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(2.72rem, 16vw, 4.4rem);
+    font-size: clamp(2.35rem, 11.5vw, 3.5rem);
+    overflow-wrap: break-word;
   }
 
   .hero h1 span {
@@ -1698,6 +1723,10 @@ button {
 
   .hero-visual {
     min-height: 305px;
+  }
+
+  .visual-node {
+    min-width: 92px;
   }
 
   .visual-caption {

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { profile } from "@/data/resume";
 
 const technologies = [
   "Webflow",
@@ -23,6 +24,15 @@ export default function StelEstheticsCaseStudy() {
           <p className="case-study-subtitle">
             Platform Lifecycle, Migration, Analytics &amp; User Experience
           </p>
+          <a
+            className="text-link case-study-hero-link"
+            href={profile.stelEstheticsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit the live StelEsthetics website
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
         </section>
 
         <div className="case-study-layout">

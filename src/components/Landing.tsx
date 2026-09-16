@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   ArrowDownRight,
   ArrowRight,
+  ArrowUpRight,
   BarChart3,
   BookOpen,
   Boxes,
@@ -332,9 +333,19 @@ export default function Landing() {
                 testimonials, and e-commerce planning
               </li>
             </ul>
-            <Link className="text-link" href="/case-studies/steleesthetics">
-              Read the case study <ArrowRight size={16} aria-hidden="true" />
-            </Link>
+            <div className="case-study-links">
+              <Link className="text-link" href="/case-studies/steleesthetics">
+                Read the case study <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+              <a
+                className="text-link text-link-muted"
+                href={profile.stelEstheticsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit StelEsthetics <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </div>
           </div>
           <div className="platform-visual" aria-hidden="true">
             <div className="browser-bar">

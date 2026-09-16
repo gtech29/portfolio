@@ -33,6 +33,7 @@ export const profile = {
   email: "quiet.signal.294@proton.me",
   linkedin: "https://www.linkedin.com/in/juan-rodriguez-26b39427a/",
   github: "https://github.com/gtech29",
+  stelEstheticsUrl: "https://stelesthetics.net/",
 };
 
 export const skillGroups: SkillGroup[] = [
