@@ -695,6 +695,7 @@ button {
 }
 
 .experience-content {
+  min-width: 0;
   padding: 26px 28px 27px;
   border: 1px solid var(--line);
   background: rgba(13, 27, 39, 0.55);
@@ -747,6 +748,12 @@ button {
   overflow-wrap: anywhere;
 }
 
+.experience-topline > div,
+.detail-list,
+.detail-list li {
+  min-width: 0;
+}
+
 .experience-location,
 .compact-org {
   margin: 3px 0 0;
@@ -768,6 +775,7 @@ button {
   color: var(--muted-strong);
   font-size: 0.86rem;
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .detail-list li::before {
@@ -1579,6 +1587,8 @@ button {
 
   .portrait-card {
     max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .skills-grid {
@@ -1602,7 +1612,7 @@ button {
   }
 
   .experience-list::before {
-    left: 3px;
+    left: 7.5px;
   }
 
   .experience-marker {
