@@ -1,44 +1,67 @@
-# Personal Portfolio Website
+# Juan Rodriguez — Personal Portfolio
 
-This is the source code for [juan-rodriguez.dev](https://www.juan-rodriguez.dev), a personal portfolio site built to showcase my work in full-stack development, AI infrastructure, DevSecOps, and research-driven projects. The site highlights professional experience, selected projects, and services I offer in web development, digital systems, and emerging technologies.
+Production portfolio for Juan Rodriguez, an Information Systems Security Engineer with a Computer Science background and experience in cybersecurity, systems integration, network analysis, technical project delivery, and quality assurance.
 
-## Features
+## Stack
 
-- **Modern Stack:** Built with React, TypeScript, Next.js, and Tailwind CSS
-- **Interactive Agents:** Real-time chat agents for each page powered by LLM backends (In Progress)
-- **Projects Section:** Detailed write-ups of featured work including:
-  - [Digital Twin System](https://www.juan-rodriguez.dev/projects/digital-twin)
-  - [Central Logging System](https://www.juan-rodriguez.dev/projects/logging-system)
-  - [StelEsthetics](https://www.juan-rodriguez.dev/projects/stelesthetics)
-- **Responsive UI:** Mobile-first design with dark mode support and smooth UI transitions
-- **Secure Contact Form:** Firebase-integrated form with reCAPTCHA for protected submissions
-- **SEO and Accessibility:** Includes meta tags, Open Graph data, and ARIA best practices
+- Next.js App Router
+- React 19
+- TypeScript
+- Tailwind CSS v4 for the base build pipeline
+- Custom CSS for the visual system
+- Lucide React for small interface icons
 
-### Project Structure
+## Local development
 
-![ProjectStructure] (/public/ProjectStructure.svg)
+```bash
+npm install
+npm run dev
+```
 
-### Deployment
+The site runs at `http://localhost:3000`.
 
-The site is deployed using [Vercel](https://vercel.com) with a custom domain: [juan-rodriguez.dev](https://juan-rodriguez.dev).
+## Checks and production build
 
----
+```bash
+npm run lint
+npm run test
+npm run build
+npm start
+```
 
-### Tech Stack
+`npm run test` is the TypeScript check because this portfolio does not currently include a separate test suite.
 
-- **Frontend:** React, Next.js 14 (App Router), Tailwind CSS, TypeScript
-- **Backend (Contact Form):** Firebase Firestore + Google reCAPTCHA
-- **Hosting:** Vercel + GitHub
+## Content updates
 
----
+Resume-grounded content lives in [`src/data/resume.ts`](./src/data/resume.ts). Update the profile, skills, experience, training, military experience, or education there so the homepage stays consistent.
 
----
+- Add or update the LinkedIn and GitHub URLs in `profile` in `src/data/resume.ts`.
+- A resume button is intentionally omitted until a public PDF is added to the project.
+- The StelEsthetics case study lives at `src/components/StelEstheticsCaseStudy.tsx` and `/case-studies/steleesthetics`.
 
-### Planned Enhancements
+## Optional Google Analytics
 
-- Add support for local LLM agents.
-- Containerize the app, integrate it with Kubernetes, and enhance security.
+Analytics is disabled by default. To enable it, set the public measurement ID in the deployment environment:
 
-### License
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
 
-MIT © Juan Rodriguez — created to support learning, hiring, and collaboration.
+The site works normally without this variable. `NEXT_PUBLIC_SITE_URL` can also be set to change the canonical URL, sitemap, robots file, and Open Graph URL:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://example.com
+```
+
+Do not commit `.env` files, credentials, API keys, or private key material.
+
+## Deployment
+
+The app can be deployed to Vercel or Netlify using the standard Next.js configuration:
+
+1. Install dependencies with `npm install`.
+2. Use `npm run build` as the build command.
+3. Use `npm start` for a Node.js server deployment, or use the platform's native Next.js runtime.
+4. Configure `NEXT_PUBLIC_SITE_URL` and, optionally, `NEXT_PUBLIC_GA_MEASUREMENT_ID` in the deployment environment.
+
+The project includes security response headers, a sitemap, and a robots route. The old project and form routes redirect to the current single-page portfolio or the dedicated StelEsthetics case study.

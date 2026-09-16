@@ -6,20 +6,15 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "test": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.5.0",
-    "clsx": "^2.1.1",
-    "firebase": "^11.10.0",
-    "firebase-admin": "^13.4.0",
-    "framer-motion": "^12.23.3",
     "lucide-react": "^0.525.0",
-    "next": "^15.3.6",
+    "next": "^16.3.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-google-recaptcha": "^3.1.0",
-    "zod": "^4.0.7"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,9 +22,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/react-google-recaptcha": "^2.1.9",
     "eslint": "^9",
-    "eslint-config-next": "15.3.5",
+    "eslint-config-next": "^16.3.5",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
