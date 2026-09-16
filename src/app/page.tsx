@@ -14,7 +14,6 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
-  jobTitle: profile.title,
   alumniOf: "California State University, Northridge",
   sameAs: [profile.linkedin, profile.github],
 };

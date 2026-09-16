@@ -137,7 +137,6 @@ export default function Landing() {
           </p>
           <h1 id="hero-title">
             Juan Rodriguez
-            <span>{profile.title}</span>
           </h1>
           <p className="hero-descriptor">{profile.descriptor}</p>
           <p className="hero-summary">{profile.summary}</p>

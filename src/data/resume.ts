@@ -24,7 +24,6 @@ export type Education = {
 
 export const profile = {
   name: "Juan Rodriguez",
-  title: "Information Systems Security Engineer",
   eyebrow: "Information Systems Security Engineering",
   descriptor:
     "Cybersecurity · Systems Integration · Computer Science · Technical Project Delivery",
