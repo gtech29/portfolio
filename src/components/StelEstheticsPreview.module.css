@@ -1,0 +1,364 @@
+.preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(200px, 21.3vw, 305px);
+  container-type: inline-size;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.devices {
+  position: absolute;
+  inset: 0;
+  color: #10202a;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.laptop {
+  position: absolute;
+  left: 5.7%;
+  bottom: 4.4%;
+  width: 65%;
+  filter: drop-shadow(0 9px 9px #0006);
+}
+
+.laptopLid {
+  position: relative;
+  padding: 2.1% 2.5% 2.4%;
+  border: 1.5px solid #919c9f;
+  border-radius: 3.2cqw 3.2cqw 1.1cqw 1.1cqw;
+  background: linear-gradient(
+    115deg,
+    #303639 0%,
+    #05080a 7%,
+    #030608 90%,
+    #354046
+  );
+  box-shadow:
+    inset 0 0 0 1px #080b0e,
+    0 0 0 1px #07131c;
+}
+
+.webcam {
+  position: absolute;
+  top: 1.8%;
+  left: 50%;
+  width: 0.55cqw;
+  height: 0.55cqw;
+  border-radius: 50%;
+  background: #17262d;
+  box-shadow: inset 0 0 1px #547489;
+}
+
+.laptopScreen {
+  aspect-ratio: 1.65;
+  overflow: hidden;
+  border: 1px solid #050608;
+  border-radius: 0.65cqw;
+  background: #edede8;
+}
+
+.laptopHinge {
+  width: 92%;
+  height: 0.8cqw;
+  margin: -0.05cqw auto 0;
+  background: linear-gradient(
+    to right,
+    #6c787c,
+    #222e31 8%,
+    #828c8f 50%,
+    #14232c 91%,
+    #747d7e
+  );
+}
+
+.laptopBase {
+  position: relative;
+  left: -6.5%;
+  width: 113%;
+  height: 1.7cqw;
+  border-radius: 0.15cqw 0.15cqw 45% 45%;
+  border-top: 1px solid #d6e0e4;
+  background: linear-gradient(
+    to bottom,
+    #d9e2e5,
+    #6c7b83 40%,
+    #b5c0c4 56%,
+    #46535a 88%
+  );
+  box-shadow: 0 2px 2px #0008;
+}
+
+.laptopBase > span {
+  display: block;
+  width: 17%;
+  height: 43%;
+  margin: -1px auto 0;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(#59646a, #a2acb1);
+}
+
+.website {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f3f3ef;
+}
+
+.siteHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 16.5%;
+  padding: 0 4.8%;
+  background: linear-gradient(100deg, #fff, #eeefec);
+}
+
+.siteBrand {
+  flex-shrink: 0;
+  font-size: 1.8cqw;
+  font-weight: 700;
+  letter-spacing: -0.065cqw;
+}
+
+.siteNavigation {
+  display: flex;
+  align-items: center;
+  gap: 1.8cqw;
+  font-size: 1.03cqw;
+  font-weight: 600;
+}
+
+.bookSmall {
+  padding: 1.1cqw 1.5cqw;
+  border-radius: 0.6cqw;
+  color: #fff;
+  background: #0b1c28;
+}
+
+.siteHero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 83.5%;
+  background-image:
+    linear-gradient(90deg, #eeeeebdb, #eeeeeccf 49%, #efefec12 77%),
+    url("/stelesthetics-preview-interior.jpg");
+  background-position:
+    center,
+    61% 56%;
+  background-size: cover;
+}
+
+.siteCopy {
+  position: relative;
+  display: flex;
+  width: 63%;
+  margin-left: 10.8%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1.1cqw;
+}
+
+.siteTitle {
+  font-size: 3.3cqw;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.11cqw;
+}
+
+.siteTagline {
+  margin-top: 1.2cqw;
+  font-size: 1.84cqw;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.025cqw;
+}
+
+.siteDescription {
+  max-width: 32cqw;
+  margin-top: 1.3cqw;
+  font-size: 1.15cqw;
+  line-height: 1.75;
+}
+
+.bookButton {
+  display: block;
+  margin-top: 1.7cqw;
+  padding: 1.5cqw 2.8cqw;
+  border-radius: 0.45cqw;
+  background: #0b202e;
+  color: #fff;
+  font-size: 1.2cqw;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 0.5cqw 1cqw #10263222;
+}
+
+.phone {
+  position: absolute;
+  z-index: 2;
+  right: 1.7%;
+  bottom: -2.5%;
+  width: 21.5%;
+  aspect-ratio: 0.535;
+  padding: 0.85%;
+  border: 1.5px solid #a5adae;
+  border-radius: 4.5cqw 4.5cqw 3.7cqw 3.7cqw;
+  background: #090d11;
+  box-shadow:
+    0 0 0 1px #02080c,
+    -0.6cqw 0.7cqw 2cqw #0008,
+    inset 0 0 0 1px #485156;
+}
+
+.phone::before,
+.phone::after {
+  content: "";
+  position: absolute;
+  left: -0.7cqw;
+  width: 0.3cqw;
+  height: 3.2cqw;
+  background: linear-gradient(#a0a8ad, #434f56);
+  border-radius: 1px;
+}
+
+.phone::before {
+  top: 19%;
+}
+.phone::after {
+  top: 29%;
+}
+
+.phoneScreen {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3.4cqw 3.4cqw 2.6cqw 2.6cqw;
+  background: #f5f5f2;
+}
+
+.phoneStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5.7%;
+  padding: 0.3cqw 1.5cqw 0;
+  color: #0c1419;
+  background: #fff;
+  font-size: 0.9cqw;
+  font-weight: 700;
+}
+
+.phoneSignals {
+  font-size: 0.75cqw;
+  letter-spacing: -0.03cqw;
+}
+
+.phoneNotch {
+  position: absolute;
+  top: 0.6cqw;
+  left: 29%;
+  width: 42%;
+  height: 2cqw;
+  border-radius: 0 0 1.7cqw 1.7cqw;
+  background: #090d11;
+}
+
+.phoneNotch > i {
+  position: absolute;
+  top: 0.55cqw;
+  right: 15%;
+  width: 0.45cqw;
+  height: 0.45cqw;
+  border-radius: 50%;
+  background: #223746;
+}
+
+.phoneHome {
+  position: absolute;
+  bottom: 1.6cqw;
+  left: 34%;
+  width: 32%;
+  height: 0.6cqw;
+  border-radius: 3px;
+  background: #17232b;
+}
+
+.mobileWebsite {
+  height: 94.3%;
+}
+.mobileWebsite .siteHeader {
+  height: 13%;
+  padding: 0 7%;
+}
+.mobileWebsite .siteBrand {
+  font-size: 1.75cqw;
+}
+.mobileWebsite .siteHero {
+  height: 87%;
+  align-items: flex-start;
+  background-image: linear-gradient(90deg, #efefeadf, #f5f5efe0);
+}
+
+.mobileWebsite .siteCopy {
+  width: 90%;
+  margin-left: 9%;
+  padding-top: 4.4cqw;
+}
+.mobileWebsite .siteTitle {
+  font-size: 2.45cqw;
+  letter-spacing: -0.1cqw;
+}
+.mobileWebsite .siteTagline {
+  width: 93%;
+  margin-top: 3.4cqw;
+  font-size: 1.95cqw;
+  line-height: 1.4;
+}
+.mobileWebsite .siteDescription {
+  width: 88%;
+  margin-top: 1.2cqw;
+  font-size: 1.05cqw;
+  line-height: 1.65;
+}
+.mobileWebsite .bookButton {
+  margin-top: 2.3cqw;
+  padding: 1.5cqw 1.6cqw;
+  font-size: 1.13cqw;
+}
+
+.menu {
+  display: flex;
+  width: 1.7cqw;
+  gap: 0.38cqw;
+  flex-direction: column;
+}
+.menu > i {
+  display: block;
+  height: 0.2cqw;
+  width: 100%;
+  background: #293c46;
+}
+
+@media (min-width: 1200px) {
+  .laptop {
+    width: 62.5%;
+  }
+}
+
+@media (max-width: 760px) {
+  .preview {
+    min-height: 0;
+    aspect-ratio: 1.85;
+  }
+  .laptop {
+    bottom: 7%;
+  }
+  .phone {
+    bottom: 2%;
+  }
+}

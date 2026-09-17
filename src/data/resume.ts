@@ -24,11 +24,16 @@ export type Education = {
 
 export const profile = {
   name: "Juan Rodriguez",
-  eyebrow: "Information Systems Security Engineering",
+  eyebrow: "Build · Secure · Improve",
+  title: "Information Systems Security Engineer",
   descriptor:
     "Cybersecurity · Systems Integration · Computer Science · Technical Project Delivery",
   summary:
     "Information Systems Security Engineer with a Computer Science background and experience spanning systems integration, network analysis, secure systems validation, containerized deployment, technical project delivery, and quality assurance.",
+  overview: [
+    "I am an Information Systems Security Engineer currently working at the Naval Facilities Engineering and Expeditionary Warfare Center. I have experience in systems integration, network analysis, secure systems validation, technical documentation, Docker deployment, microservices integration, quality assurance, web platform lifecycle management, and cybersecurity tooling.",
+    "I hold a Bachelor of Science in Computer Science and previously served as a United States Navy Hospital Corpsman, where I developed a strong foundation in discipline, teamwork, and mission-focused problem solving.",
+  ],
   email: "quiet.signal.294@proton.me",
   linkedin: "https://www.linkedin.com/in/juan-rodriguez-26b39427a/",
   github: "https://github.com/gtech29",
@@ -50,7 +55,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Systems & Platforms",
-    description: "Operating systems, virtualization, and containerized delivery.",
+    description:
+      "Operating systems, virtualization, and containerized delivery.",
     items: ["Linux (Ubuntu)", "Windows", "VMware", "Docker"],
     icon: "systems",
   },
@@ -142,7 +148,7 @@ export const training: Experience = {
   dates: "June 2025 – August 2025",
   bullets: [
     "Completed a 10-week cybersecurity program focused on logging, incident response, intrusion detection, threat hunting, and security operations.",
-    "Built Splunk Catalyst case study reports to identify system anomalies and strengthened investigative documentation using Splunk and Wireshark.",
+    "Built Splunk Catalyst case study reports using Splunk and Wireshark.",
   ],
   technologies: ["Splunk", "Wireshark", "Security operations"],
 };
@@ -166,7 +172,8 @@ export const education: Education[] = [
   {
     institution: "Rio Hondo Community College",
     location: "Whittier, CA",
-    degree: "Associate of Science, Computer Information Systems and Mathematics",
+    degree:
+      "Associate of Science, Computer Information Systems and Mathematics",
     date: "May 2023",
   },
 ];
